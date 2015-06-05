@@ -1,0 +1,86 @@
+body {
+    color: #34495e;
+    font-family: "Lato",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 1.72222;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+.login-screen{
+    background-color: #0099FF;
+    height: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+}
+.login{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.login-icon {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    margin-top: -150px;
+    margin-left: -300px;
+}
+.login-icon img{width: 100%;display: block}
+.login-icon h3{
+    margin: 15px 0;
+    font-size: 22px;
+    font-weight: 300;
+}
+.login-icon h3 small{
+    font-weight: 700;
+    display: block;
+    font-size: 22px;
+    color: #fff;
+    margin-top: 8px;
+}
+.login-form{
+    background-color: #edeff1;
+    border-radius: 6px;
+    padding: 24px 23px 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -120px;
+}
+.form-group{
+    position: relative;
+}
+.form-group .login-field{
+    padding-left: 35px;
+    height: 40px;
+}
+.form-group .input-large{width: 280px;}
+.form-group .login-field-icon{
+    position: absolute;
+    color: #428BCA;
+    top: 50%;
+    left: 10px;
+    margin-top: -9px;
+}
+.form-control:focus ~ i.login-field-icon{color: rgb(48,113,169)}
+.form-group .btn-login{
+    height: 40px;
+}
+.login .forget-psd{
+    color: #bfc9ca;
+    font-size: 12px;
+    float: right;
+    line-height: 35px;
+    display: block;
+}
+.login .forget-psd:hover{
+    color: #3071a9;
+}
