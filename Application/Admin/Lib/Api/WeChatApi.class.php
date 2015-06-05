@@ -375,7 +375,7 @@ class WeChatApi extends Model{
                 ,'function' =>  $method
                 ,'post_time'    =>  time()
             );
-            M('Api_log')->save($err);
+            M('Api_log')->add($err);
         }
         return $data;
     }

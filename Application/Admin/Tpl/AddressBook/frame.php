@@ -14,44 +14,44 @@
                         <div class="well">
                             <ul class="tree_menu">
                                 <li>
-                                    <a node="1"><i class="fa fa-angle-right level1"></i><span>小微企业</span></a>
+                                    <a data-node="1"><i class="fa fa-angle-right level1"></i><span>小微企业</span></a>
                                     <ul class="tree_menu">
                                         <li>
-                                            <a node="5" class=""><i class="fa fa-angle-right level2"></i><span>总经办</span></a>
+                                            <a data-node="5" class=""><i class="fa fa-angle-right level2"></i><span>总经办</span></a>
                                         </li>
                                         <li>
-                                            <a node="6" class=""><i class="fa fa-angle-right level2"></i><span>管理部</span></a>
+                                            <a data-node="6" class=""><i class="fa fa-angle-right level2"></i><span>管理部</span></a>
                                             <ul class="tree_menu">
                                                 <li>
-                                                    <a node="24" class=""><i class="fa fa-angle-right level3"></i><span>总务科</span></a>
+                                                    <a data-node="24" class=""><i class="fa fa-angle-right level3"></i><span>总务科</span></a>
                                                 </li>
                                                 <li>
-                                                    <a node="23" class=""><i class="fa fa-angle-right level3"></i><span>人事科</span></a>
+                                                    <a data-node="23" class=""><i class="fa fa-angle-right level3"></i><span>人事科</span></a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a node="8" class=""><i class="fa fa-angle-right level2"></i><span>财务部</span></a>
+                                            <a data-node="8" class=""><i class="fa fa-angle-right level2"></i><span>财务部</span></a>
                                             <ul class="tree_menu">
                                                 <li>
-                                                    <a node="25" class=""><i class="fa fa-angle-right level3"></i><span>会计科</span></a>
+                                                    <a data-node="25" class=""><i class="fa fa-angle-right level3"></i><span>会计科</span></a>
                                                 </li>
                                                 <li>
-                                                    <a node="26" class=""><i class="fa fa-angle-right level3"></i><span>金融科</span></a>
+                                                    <a data-node="26" class=""><i class="fa fa-angle-right level3"></i><span>金融科</span></a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a node="7" class=""><i class="fa fa-angle-right level2"></i><span>销售部</span></a>
+                                            <a data-node="7" class=""><i class="fa fa-angle-right level2"></i><span>销售部</span></a>
                                         </li>
                                         <li>
-                                            <a node="21" class=""><i class="fa fa-angle-right level2"></i><span>采购部</span></a>
+                                            <a data-node="21" class=""><i class="fa fa-angle-right level2"></i><span>采购部</span></a>
                                         </li>
                                         <li>
-                                            <a node="3" class=""><i class="fa fa-angle-right level2"></i><span>IT部</span></a>
+                                            <a data-node="3" class=""><i class="fa fa-angle-right level2"></i><span>IT部</span></a>
                                         </li>
                                         <li>
-                                            <a node="2" class=""><i class="fa fa-angle-right level2"></i><span>运营部</span></a>
+                                            <a data-node="2" class=""><i class="fa fa-angle-right level2"></i><span>运营部</span></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -79,16 +79,16 @@
                                     <label class="col-lg-4 control-label">上级部门*：</label>
                                     <div class="col-lg-8">
                                         <div class="input-group">
-                                            <input name="p_name" type="text" class="form-control" autocomplete="off">
+                                            <input name="p_name" type="text" class="form-control" autocomplete="off" disabled>
                                             <input name="p_id" type="hidden" class="form-control" autocomplete="off">
                                             <span class="input-group-btn">
-                                                <button type="button" id="select-dept" class="btn btn-success">选择</button>
+                                                <button type="button" class="btn btn-success select-dept">选择</button>
                                             </span>
                                             <div class="dept-root well with-header">
                                                 <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级部门</div>
                                                 <ul class="tree_menu">
                                                     <li>
-                                                        <a node="1"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
+                                                        <a data-node="1"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
                                                     </li>
                                                 </ul>
                                             </div>

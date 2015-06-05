@@ -9,20 +9,33 @@ $(function(){
     ga('create', 'UA-52103994-1', 'auto');
     ga('send', 'pageview');
 
-    console.log($('.dept-root .tree_menu li'));
     $('.dept-root .tree_menu li').append($('.tissue_tree > div.well').html());
-    $(".tree_menu a").click(function() {
+
+    $(this).on('click','.tree_menu a',function(){
         $(this).parents('.well').find(".tree_menu a.active").removeClass("active");
-        //$(".tree_menu a.active").removeClass("active");
+
         $(this).addClass("active");
-        /*sendAjax("/index.php?m=&c=Dept&a=read", "id=" + $(this).attr("node"), function(data) {
-         showdata(data);
-         });*/
+
+        var dept_root   =   $(this).parents('.dept-root');
+        if(dept_root.length){
+            var node = $(this).data('node');
+            var name = $(this).find('span').text();
+            dept_root.hide();
+            dept_root.parent().find('input[name=p_name]').val(name);
+            dept_root.parent().find('input[name=p_id]').val(node);
+        }else{
+
+        }
         return false;
     });
 
-    $('#select-dept').click(function(){
-        $(this).parents('.input-group').find('.dept-root').slideDown();
+    $(this).on('click','.select-dept',function(){
+        var dept_root   =   $(this).parents('.input-group').find('.dept-root');
+        if(dept_root.is(':hidden')){
+            dept_root.slideDown();
+        }else{
+            dept_root.slideUp();
+        }
     });
 
     $("#add_dept").on('click', function () {
@@ -34,7 +47,7 @@ $(function(){
                     $('#addModal .form-dept').append('<input name="type" value="add" type="hidden"/>');
                 }
                 else{$('#addModal .form-dept')[0].reset();}
-
+                $('#addModal .form-dept .dept-root').hide();
                 return $("#addModal").html();
             },
             title: "添加部门",
