@@ -35,7 +35,7 @@ class AddressbookController extends AdminController {
     public function get_dept(){
         $id = (int)$_POST['id'];
         $dept   =   $this->dept->find($id);
-        echo json_encode($dept);
+        echo is_array($dept) ? json_encode($dept) : '';
     }
 
     private function add_dept($params){

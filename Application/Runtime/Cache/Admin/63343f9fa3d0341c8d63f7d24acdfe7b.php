@@ -616,7 +616,7 @@ Purchase: http://wrapbootstrap.com
                 <a class="btn btn-success" id="add_dept" href="javascript:void(0);">添加</a>
                 <a class="btn btn-success" href="javascript:void(0);">保存</a>
                 <span> | </span>
-                <a class="btn btn-danger" href="javascript:void(0);">删除</a>
+                <a class="btn btn-danger" id="del_dept" href="javascript:void(0);">删除</a>
             </div><!--Widget Header-->
             <div class="widget-body">
                 <div class="row">
@@ -624,7 +624,7 @@ Purchase: http://wrapbootstrap.com
                         <div class="well">
                             <ul class="tree_menu">
                                 <li>
-                                    <a data-node="1"><i class="fa fa-angle-right level1"></i><span>小微企业</span></a>
+                                    <a data-node="4"><i class="fa fa-angle-right level1"></i><span>小微企业</span></a>
                                     <ul class="tree_menu">
                                         <li>
                                             <a data-node="5" class=""><i class="fa fa-angle-right level2"></i><span>总经办</span></a>
@@ -670,6 +670,7 @@ Purchase: http://wrapbootstrap.com
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <div class="well">
+                            <input id="id" type="hidden"/>
                             <div class="form-horizontal bv-form form-dept">
                                 <div class="form-group has-feedback">
                                     <label class="col-lg-4 control-label">名称*：</label>

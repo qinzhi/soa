@@ -11,19 +11,47 @@ $(function(){
 
     $('.dept-root .tree_menu li').append($('.tissue_tree > div.well').html());
 
+    var dept = {
+        showData : function(value){
+            dept.id = value.id;
+            $('div.form-dept').find('input[name=name]').val(value.name);
+            $('div.form-dept').find('input[name=short_name]').val(value.short_name);
+            $('div.form-dept').find('input[name=p_id]').val(value.pid);
+            if(value.pid){
+                var p_name = $('.tissue_tree a[data-node=' + value.pid + ']').find('span').text();
+            }else{
+                var p_name = '';
+            }
+            $('div.form-dept').find('input[name=p_name]').val(p_name);
+            $('div.form-dept').find('select[name=grade_id]')
+                                .find('option[value=' + value.dept_grade_id + ']').attr('selected',true);
+
+            $('div.form-dept').find('input[name=sort]').val(value.sort);
+            $('div.form-dept').find('input[name=remark]').val(value.remark);
+        }
+    };
     $(this).on('click','.tree_menu a',function(){
         $(this).parents('.well').find(".tree_menu a.active").removeClass("active");
 
         $(this).addClass("active");
-
+        var node = $(this).data('node');
+        var name = $(this).find('span').text();
         var dept_root   =   $(this).parents('.dept-root');
         if(dept_root.length){
-            var node = $(this).data('node');
-            var name = $(this).find('span').text();
+
             dept_root.hide();
             dept_root.parent().find('input[name=p_name]').val(name);
             dept_root.parent().find('input[name=p_id]').val(node);
         }else{
+            if(dept.node != node){
+                $.post('/addressbook/get_dept',{id:node},function(value){
+                    if(value != ''){
+                        value = eval('(' + value + ')');
+                        dept.node = value.id;
+                        dept.showData(value);
+                    }
+                });
+            }
 
         }
         return false;
@@ -69,5 +97,17 @@ $(function(){
                 }
             }
         });
+    });
+
+    $('#del_dept').click(function(){
+       if(dept.id){
+           bootbox.confirm("是否删除?", function (result) {
+               if (result) {
+                   //
+               }
+           });
+       }else{
+
+       }
     });
 });
