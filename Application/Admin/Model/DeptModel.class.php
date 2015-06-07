@@ -12,6 +12,8 @@ use Think\Model;
 class DeptModel extends CommonModel{
     public function get_depts(){
         $depts = $this->select();
-        dump($depts);
+        $tree = new \Admin\Lib\Org\Util\Tree($depts);
+        $depts = $tree->leaf();
+        return $depts;
     }
 }

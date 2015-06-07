@@ -1,5 +1,5 @@
 <!-- Loading Container -->
-<div class="loading-container">
+<div class="loading-container loading-active">
     <div class="loading-progress">
         <div class="rotator">
             <div class="rotator">

@@ -248,12 +248,12 @@
                             <!--/Tasks Dropdown-->
                         </li>
                         <li>
-                            <a class="login-area dropdown-toggle" data-toggle="dropdown" style="min-width: 165 px;">
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <div class="avatar" title="View your public profile">
                                     <img src="__IMAGE__/avatars/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>大智</span></span></h2>
+                                    <h2><span class="profile"><span>大智&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->

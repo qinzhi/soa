@@ -70,7 +70,7 @@
 
   var defaults = {
     // default language
-    locale: "en",
+    locale: "zh_CN",
     // show backdrop or not
     backdrop: true,
     // animate the modal in/out
@@ -180,7 +180,7 @@
       if (!button.className) {
         if (total <= 2 && index === total-1) {
           // always add a primary to the main option in a two-button dialog
-          button.className = "btn-primary";
+          button.className = "btn-success";
         } else {
           button.className = "btn-default";
         }

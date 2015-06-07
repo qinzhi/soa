@@ -28,7 +28,7 @@ class AddressbookController extends AdminController {
                 $this->add_dept($_POST);
             }
         }
-        // $this->dept->get_depts();
+        $this->assign('depts',$this->dept->get_depts());
         $this->display();
     }
 
@@ -63,6 +63,36 @@ class AddressbookController extends AdminController {
 
             $this->assign('exec_status',DB_EXEC_ADD_SUCCESS);
         }
+    }
+
+    public function update_dept(){
+        if($_POST['params']){
+            parse_str($_POST['params']);
+        }
+        if($id){
+            $data   =   array(
+                'id'   =>  $id
+                ,'name'  =>  $name
+                ,'parentid' =>  empty($p_id) ? 1 : $p_id
+                ,'order'    =>  $sort
+            );
+            $result = $this->_wechat->update_department($data);
+            if($result->errcode == 0){
+                $this->dept->find($id);
+                $this->dept->name = $name;
+                $this->dept->letter =   get_letter($this->dept->name);
+                $this->dept->short_name = $short_name;
+                $this->dept->dept_grade_id = $grade_id;
+                $this->dept->pid = $p_id;
+                $this->dept->sort = $sort;
+                $this->dept->remark = $remark;
+                $this->dept->save();
+                echo DB_EXEC_EDIT_SUCCESS;
+            }
+        }else{
+            echo DB_EXEC_EDIT_FAIL;
+        }
+
     }
 
     public function del_dept(){

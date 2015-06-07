@@ -14,20 +14,20 @@ $(function(){
     var dept = {
         showData : function(value){
             dept.id = value.id;
-            $('div.form-dept').find('input[name=name]').val(value.name);
-            $('div.form-dept').find('input[name=short_name]').val(value.short_name);
-            $('div.form-dept').find('input[name=p_id]').val(value.pid);
+            $('.plugins_dept- form').find('input[name=name]').val(value.name);
+            $('.plugins_dept- form').find('input[name=short_name]').val(value.short_name);
+            $('.plugins_dept- form').find('input[name=p_id]').val(value.pid);
             if(value.pid){
                 var p_name = $('.tissue_tree a[data-node=' + value.pid + ']').find('span').text();
             }else{
                 var p_name = '';
             }
-            $('div.form-dept').find('input[name=p_name]').val(p_name);
-            $('div.form-dept').find('select[name=grade_id]')
+            $('.plugins_dept- form').find('input[name=p_name]').val(p_name);
+            $('.plugins_dept- form').find('select[name=grade_id]')
                                 .find('option[value=' + value.dept_grade_id + ']').attr('selected',true);
 
-            $('div.form-dept').find('input[name=sort]').val(value.sort);
-            $('div.form-dept').find('input[name=remark]').val(value.remark);
+            $('.plugins_dept- form').find('input[name=sort]').val(value.sort);
+            $('.plugins_dept- form').find('input[name=remark]').val(value.remark);
         }
     };
     $(this).on('click','.tree_menu a',function(){
@@ -44,11 +44,13 @@ $(function(){
             dept_root.parent().find('input[name=p_id]').val(node);
         }else{
             if(dept.node != node){
+                set_loading('show');
                 $.post('/addressbook/get_dept',{id:node},function(value){
                     if(value != ''){
                         value = eval('(' + value + ')');
                         dept.node = value.id;
                         dept.showData(value);
+                        set_loading('hide');
                     }
                 });
             }
@@ -71,7 +73,7 @@ $(function(){
             message: function(){
 
                 if($('#addModal .col-md-12 .form-dept').html() == ''){
-                    $('#addModal .col-md-12 .form-dept').append($('div.form-dept').html());
+                    $('#addModal .col-md-12 .form-dept').append($('form.form-dept').html());
                     $('#addModal .form-dept').append('<input name="type" value="add" type="hidden"/>');
                 }
                 else{$('#addModal .form-dept')[0].reset();}
@@ -103,11 +105,44 @@ $(function(){
        if(dept.id){
            bootbox.confirm("是否删除?", function (result) {
                if (result) {
-                   //
+                   if(dept.id){
+                       set_loading('show');
+                       $.post('/addressbook/del_dept',{id:dept.id},function(data){
+                           if(data==3){
+                               $('a[data-node=' + dept.id + ']').parent().remove();
+                               delete dept.id;
+                               Notify('删除成功', 'bottom-right', '5000', 'success', 'fa-check', true);
+                           }else if(data==-3){
+                               Notify('删除失败', 'bottom-right', '5000', 'danger', 'fa-bolt', true);
+                           }
+                           set_loading('hide');
+                       });
+                   }
                }
            });
        }else{
 
        }
+    });
+
+    $('#update_dept').click(function(){
+        var params = $('.plugins_dept- form').serialize();
+        if(dept.id){
+            set_loading('show');
+            params += '&id=' + dept.id;
+            $.post('/addressbook/update_dept',{params:params},function(data){
+                if(data==2){
+                    $('a[data-node=' + dept.id + ']').find('span')
+                                                        .text($('.plugins_dept- form').find('input[name=name]').val());
+                    Notify('更新成功', 'bottom-right', '5000', 'success', 'fa-check', true);
+                }else if(data==-2){
+                    Notify('更新失败', 'bottom-right', '5000', 'danger', 'fa-bolt', true);
+                }
+                set_loading('hide');
+            });
+        }else{
+            Notify('请先选择部门', 'bottom-right', '5000', 'warning', 'fa-warning', true);
+        }
+
     });
 });

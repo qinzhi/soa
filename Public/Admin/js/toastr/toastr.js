@@ -255,7 +255,7 @@
                 PlaySound = 1;
                 if (isIE8orlower() == 0) {
                     var audioElement = document.createElement("audio");
-                    audioElement.setAttribute("src", "assets/sound/alert.mp3");
+                    audioElement.setAttribute("src", "/Public/Admin/sound/alert.mp3");
                     $.get();
                     audioElement.addEventListener("load", function () {
                         audioElement.play()
@@ -355,13 +355,13 @@ function getInternetExplorerVersion() {
 }
 
 function checkVersion() {
-    var msg = "You're not using Windows Internet Explorer.";
+    var msg = "你没有使用IE浏览器";
     var ver = getInternetExplorerVersion();
     if (ver > -1) {
         if (ver >= 8) {
-            msg = "You're using a recent copy of Windows Internet Explorer."
+            msg = "您使用的是最新IE浏览器"
         } else {
-            msg = "You should upgrade your copy of Windows Internet Explorer."
+            msg = "你应该升级的你IE版本"
         }
     }
     alert(msg)

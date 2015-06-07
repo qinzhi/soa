@@ -42,7 +42,7 @@ Purchase: http://wrapbootstrap.com
 <body>
 <!-- loding -->
 <!-- Loading Container -->
-<div class="loading-container">
+<div class="loading-container loading-active">
     <div class="loading-progress">
         <div class="rotator">
             <div class="rotator">
@@ -316,12 +316,12 @@ Purchase: http://wrapbootstrap.com
                             <!--/Tasks Dropdown-->
                         </li>
                         <li>
-                            <a class="login-area dropdown-toggle" data-toggle="dropdown" style="min-width: 165 px;">
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <div class="avatar" title="View your public profile">
                                     <img src="/Public/Admin/img/avatars/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>大智</span></span></h2>
+                                    <h2><span class="profile"><span>大智&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
@@ -614,16 +614,22 @@ Purchase: http://wrapbootstrap.com
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px">
                 <a class="btn btn-success" id="add_dept" href="javascript:void(0);">添加</a>
-                <a class="btn btn-success" href="javascript:void(0);">保存</a>
+                <a class="btn btn-success" id="update_dept" href="javascript:void(0);">保存</a>
                 <span> | </span>
                 <a class="btn btn-danger" id="del_dept" href="javascript:void(0);">删除</a>
             </div><!--Widget Header-->
-            <div class="widget-body">
+            <div class="widget-body plugins_dept-">
                 <div class="row">
                     <div class="col-xs-6 col-md-4 tissue_tree">
                         <div class="well">
+                            <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $count++; for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
+                                            <a data-node="'.$depts[$i]['id'].'">
+                                                <i class="fa fa-angle-right level' . $count . '"></i>
+                                                <span>'.$depts[$i]['name'].'</span>
+                                            </a>'; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
                             <ul class="tree_menu">
-                                <li>
+                                <?php $show_dept = function($depts){ if(!empty($depts) && is_array($depts)){ foreach($depts as $key=>$value){ echo ''; } } };echo $show_dept($depts);?>
+                                <!--<li>
                                     <a data-node="4"><i class="fa fa-angle-right level1"></i><span>小微企业</span></a>
                                     <ul class="tree_menu">
                                         <li>
@@ -664,14 +670,14 @@ Purchase: http://wrapbootstrap.com
                                             <a data-node="2" class=""><i class="fa fa-angle-right level2"></i><span>运营部</span></a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <div class="well">
                             <input id="id" type="hidden"/>
-                            <div class="form-horizontal bv-form form-dept">
+                            <form class="form-horizontal bv-form form-dept">
                                 <div class="form-group has-feedback">
                                     <label class="col-lg-4 control-label">名称*：</label>
                                     <div class="col-lg-8">
@@ -734,8 +740,19 @@ Purchase: http://wrapbootstrap.com
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="alert alert-warning fade in">
+                            <button class="close" data-dismiss="alert"> × </button>
+                            <i class="fa-fw fa fa-warning"></i>
+                            <strong>注：</strong>
+                            没有子部门且没有成员的部门才可以被删除。
+                        </div>
+
                     </div>
                 </div>
             </div><!--Widget Body-->
@@ -763,6 +780,7 @@ Purchase: http://wrapbootstrap.com
 <script src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/js/bootstrap.min.js"></script>
 <script src="/Public/Admin/js/bootbox/bootbox.js"></script>
+<script src="/Public/Admin/js/toastr/toastr.js"></script>
 
 <!--Beyond Scripts-->
 <script src="/Public/Admin/js/beyond.min.js"></script>
