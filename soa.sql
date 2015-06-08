@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2015-06-05 18:31:39
+Date: 2015-06-08 18:42:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `soa_api_log` (
   `function` varchar(50) DEFAULT NULL COMMENT '调用方法',
   `post_time` int(10) DEFAULT NULL COMMENT '报错时间戳',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of soa_api_log
@@ -49,12 +49,53 @@ CREATE TABLE `soa_dept` (
   `remark` varchar(255) DEFAULT NULL,
   `post_time` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of soa_dept
 -- ----------------------------
-INSERT INTO `soa_dept` VALUES ('4', '0', '小微企业', 'XWQY', '微企', '1', '1', '', '1433487016');
+INSERT INTO `soa_dept` VALUES ('1', '0', '湖南实意网络科技有限公司', 'HNSYWLKJYXGS', '实意良心', '0', '1', '', null);
+INSERT INTO `soa_dept` VALUES ('2', '1', '技术部', 'JSB', '技术', '2', '1', '', '1433730824');
+
+-- ----------------------------
+-- Table structure for `soa_position`
+-- ----------------------------
+DROP TABLE IF EXISTS `soa_position`;
+CREATE TABLE `soa_position` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) DEFAULT NULL,
+  `sort` int(5) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `post_time` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of soa_position
+-- ----------------------------
+INSERT INTO `soa_position` VALUES ('1', '总经理', '2', '-1', '', '1433749929');
+INSERT INTO `soa_position` VALUES ('2', '副总经理', '2', '1', '', '1433754601');
+
+-- ----------------------------
+-- Table structure for `soa_rank`
+-- ----------------------------
+DROP TABLE IF EXISTS `soa_rank`;
+CREATE TABLE `soa_rank` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) DEFAULT NULL,
+  `sort` int(5) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `post_time` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of soa_rank
+-- ----------------------------
+INSERT INTO `soa_rank` VALUES ('2', '部', '1', '1', '', '1433756919');
+INSERT INTO `soa_rank` VALUES ('3', '组', '2', '1', '', '1433756982');
 
 -- ----------------------------
 -- Table structure for `soa_system_token`
