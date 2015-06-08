@@ -42,7 +42,7 @@ Purchase: http://wrapbootstrap.com
 <body>
 <!-- loding -->
 <!-- Loading Container -->
-<div class="loading-container">
+<div class="loading-container loading-active">
     <div class="loading-progress">
         <div class="rotator">
             <div class="rotator">
@@ -321,46 +321,46 @@ Purchase: http://wrapbootstrap.com
                                     <img src="/Public/Admin/resource/img/avatars/adam-jansen.jpg">
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span>David Stevenson</span></span></h2>
+                                    <h2><span class="profile"><span>大智&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-                                <li class="username"><a>David Stevenson</a></li>
-                                <li class="email"><a>David.Stevenson@live.com</a></li>
+                                <li class="username"><a>大智</a></li>
+                                <li class="email"><a>631248045@live.com</a></li>
                                 <!--Avatar Area-->
                                 <li>
                                     <div class="avatar-area">
                                         <img src="/Public/Admin/resource/img/avatars/adam-jansen.jpg" class="avatar">
-                                        <span class="caption">Change Photo</span>
+                                        <span class="caption">设置头像</span>
                                     </div>
                                 </li>
                                 <!--Avatar Area-->
                                 <li class="edit">
-                                    <a href="profile.html" class="pull-left">Profile</a>
-                                    <a href="#" class="pull-right">Setting</a>
+                                    <a href="profile.html" class="pull-left">个人中心</a>
+                                    <a href="#" class="pull-right">设置</a>
                                 </li>
                                 <!--Theme Selector Area-->
                                 <li class="theme-area">
                                     <ul class="colorpicker" id="skin-changer">
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="/Public/Admin/css/skins/blue.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="/Public/Admin/css/skins/azure.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="/Public/Admin/css/skins/teal.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#53a93f;" rel="/Public/Admin/css/skins/green.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#FF8F32;" rel="/Public/Admin/css/skins/orange.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#cc324b;" rel="/Public/Admin/css/skins/pink.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#AC193D;" rel="/Public/Admin/css/skins/darkred.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#8C0095;" rel="/Public/Admin/css/skins/purple.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#0072C6;" rel="/Public/Admin/css/skins/darkblue.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#585858;" rel="/Public/Admin/css/skins/gray.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#474544;" rel="/Public/Admin/css/skins/black.min.css"></a></li>
-                                        <li><a class="colorpick-btn" href="#" style="background-color:#001940;" rel="/Public/Admin/css/skins/deepblue.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="/Public/Admin/resource/css/skins/blue.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="/Public/Admin/resource/css/skins/azure.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="/Public/Admin/resource/css/skins/teal.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#53a93f;" rel="/Public/Admin/resource/css/skins/green.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#FF8F32;" rel="/Public/Admin/resource/css/skins/orange.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#cc324b;" rel="/Public/Admin/resource/css/skins/pink.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#AC193D;" rel="/Public/Admin/resource/css/skins/darkred.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#8C0095;" rel="/Public/Admin/resource/css/skins/purple.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#0072C6;" rel="/Public/Admin/resource/css/skins/darkblue.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#585858;" rel="/Public/Admin/resource/css/skins/gray.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#474544;" rel="/Public/Admin/resource/css/skins/black.min.css"></a></li>
+                                        <li><a class="colorpick-btn" href="#" style="background-color:#001940;" rel="/Public/Admin/resource/css/skins/deepblue.min.css"></a></li>
                                     </ul>
                                 </li>
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
                                     <a href="login.html">
-                                        Sign out
+                                        退出
                                     </a>
                                 </li>
                             </ul>
@@ -377,19 +377,19 @@ Purchase: http://wrapbootstrap.com
                     </div><div class="setting-container">
                         <label>
                             <input type="checkbox" id="checkbox_fixednavbar">
-                            <span class="text">Fixed Navbar</span>
+                            <span class="text">固定头部</span>
                         </label>
                         <label>
                             <input type="checkbox" id="checkbox_fixedsidebar">
-                            <span class="text">Fixed SideBar</span>
+                            <span class="text">固定侧栏</span>
                         </label>
                         <label>
                             <input type="checkbox" id="checkbox_fixedbreadcrumbs">
-                            <span class="text">Fixed BreadCrumbs</span>
+                            <span class="text">固定面包屑</span>
                         </label>
                         <label>
                             <input type="checkbox" id="checkbox_fixedheader">
-                            <span class="text">Fixed Header</span>
+                            <span class="text">固定头</span>
                         </label>
                     </div>
                     <!-- Settings -->
@@ -425,25 +425,25 @@ Purchase: http://wrapbootstrap.com
         </a>
     </li>
     <!--通讯录-->
-    <li>
+    <li class="active open">
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa fa-group"></i>
             <span class="menu-text"> 通讯录 </span>
             <i class="menu-expand"></i>
         </a>
         <ul class="submenu">
-            <li>
-                <a href="addressbook/frame">
+            <li class="active">
+                <a href="/addressbook/organ">
                     <span class="menu-text">组织图</span>
                 </a>
             </li>
             <li>
-                <a href="tables-data.html">
+                <a href="/addressbook/position">
                     <span class="menu-text">职位</span>
                 </a>
             </li>
             <li>
-                <a href="tables-data.html">
+                <a href="/addressbook/rank">
                     <span class="menu-text">部门级别</span>
                 </a>
             </li>
@@ -578,7 +578,7 @@ Purchase: http://wrapbootstrap.com
         <li>
             <a href="#">通讯录</a>
         </li>
-        <li class="active">Blank Page</li>
+        <li class="active">组织图</li>
     </ul>
 </div>
             <!-- /Page Breadcrumb -->
@@ -587,7 +587,7 @@ Purchase: http://wrapbootstrap.com
             <div class="page-header position-relative">
                 <div class="header-title">
                     <h1>
-                        Blank Page
+                        组织图
                     </h1>
                 </div>
                 <!--Header Buttons-->
@@ -609,20 +609,98 @@ Purchase: http://wrapbootstrap.com
             <div class="page-body">
                 <!-- Your Content Goes Here -->
                 
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px">
+                <a class="btn btn-success" id="add_rank" href="javascript:void(0);">添加</a>
+                <a class="btn btn-success" id="update_rank" href="javascript:void(0);">保存</a>
+                <span> | </span>
+                <a class="btn btn-danger" id="del_rank" href="javascript:void(0);">删除</a>
+            </div><!--Widget Header-->
+            <div class="widget-body plugins_rank-">
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                        <div class="well">
+                            <table class="table table-bordered table-condensed table-hover table-focus">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        名称
+                                    </th>
+                                    <th>
+                                        状态
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php if(is_array($rank)): $i = 0; $__LIST__ = $rank;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr data-node="<?php echo ($vo["id"]); ?>">
+                                        <td>
+                                            <?php echo ($vo["name"]); ?>
+                                        </td>
+                                        <td>
+                                            <?php echo ($vo['status']==1?'启用':'禁用'); ?>
+                                        </td>
+                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+                        <div class="well">
+                            <input id="id" type="hidden"/>
+                            <form class="form-horizontal bv-form form-rank" autocomplete="off">
+                                <div class="form-group has-feedback">
+                                    <label class="col-lg-4 control-label">名称*：</label>
+                                    <div class="col-lg-8">
+                                        <input name="name" value="" class="form-control" type="text">
+                                    </div>
+                                </div>
 
-<script>
-    $(function(){
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+                                <div class="form-group has-feedback">
+                                    <label class="col-lg-4 control-label">排序：</label>
+                                    <div class="col-lg-8">
+                                        <input name="sort" class="form-control" type="text">
+                                    </div>
+                                </div>
 
-        ga('create', 'UA-52103994-1', 'auto');
-        ga('send', 'pageview');
-    });
-</script>
+                                <div class="form-group has-feedback">
+                                    <label class="col-lg-4 control-label">状态：</label>
+                                    <div class="col-lg-8">
+                                        <select name="status" class="form-control">
+                                            <option value="1">启用</option>
+                                            <option value="-1">禁用</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group has-feedback">
+                                    <label class="col-lg-4 control-label">简述：</label>
+                                    <div class="col-lg-8">
+                                        <span class="input-icon icon-right">
+                                            <textarea name="remark" class="form-control"  rows="5"></textarea>
+                                            <i class="fa  fa-rocket darkorange"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!--Widget Body-->
+        </div><!--Widget-->
+    </div>
+</div>
+
+<div id="addModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal bv-form form-rank" method="post"></form>
+        </div>
+    </div>
+</div>
             </div>
             <!-- /Page Body -->
         </div>
@@ -635,9 +713,15 @@ Purchase: http://wrapbootstrap.com
 <!--Basic Scripts-->
 <script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
+<script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
+<script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
 
 <!--Beyond Scripts-->
 <script src="/Public/Admin/resource/js/beyond.min.js"></script>
+<script src="/Public/Admin/resource/js/lib.js"></script>
+
+<?php
+ $src = array_shift(C('TMPL_PARSE_STRING')) . '/JS' . $_SERVER["REQUEST_URI"]; if(is_file(PROJECT_PATH . $src . '.js')){ echo '<script src="' . $src . '.js"></script>'; } ?>
 
 </body>
 <!--  /Body -->

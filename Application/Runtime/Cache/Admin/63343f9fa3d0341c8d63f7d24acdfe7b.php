@@ -15,27 +15,27 @@ Purchase: http://wrapbootstrap.com
     <meta name="description" content="blank page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="/Public/Admin/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Public/Admin/resource/img/favicon.png" type="image/x-icon">
 
     <!--Basic Styles-->
-    <link href="/Public/Admin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/bootstrap.min.css" rel="stylesheet" />
     <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
-    <link href="/Public/Admin/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/weather-icons.min.css" rel="stylesheet" />
 
     <!--Fonts-->
     <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
           rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
-    <link id="beyond-link" href="/Public/Admin/css/beyond.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/soa.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/typicons.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/animate.min.css" rel="stylesheet" />
+    <link id="beyond-link" href="/Public/Admin/resource/css/beyond.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/soa.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/typicons.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    <script src="/Public/Admin/js/skins.min.js"></script>
+    <script src="/Public/Admin/resource/js/skins.min.js"></script>
 </head>
 <!-- /Head -->
 <!-- Body -->
@@ -74,7 +74,7 @@ Purchase: http://wrapbootstrap.com
             <div class="navbar-header pull-left">
                 <a href="#" class="navbar-brand">
                     <small>
-                        <img src="/Public/Admin/img/logo.png" alt="" />
+                        <img src="/Public/Admin/resource/img/logo.png" alt="" />
                     </small>
                 </a>
             </div>
@@ -183,7 +183,7 @@ Purchase: http://wrapbootstrap.com
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
                                 <li>
                                     <a href="#">
-                                        <img src="/Public/Admin/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
+                                        <img src="/Public/Admin/resource/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
                                         <div class="message">
                                                 <span class="message-sender">
                                                     Divyia Austin
@@ -202,7 +202,7 @@ Purchase: http://wrapbootstrap.com
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="/Public/Admin/img/avatars/bing.png" class="message-avatar" alt="Microsoft Bing">
+                                        <img src="/Public/Admin/resource/img/avatars/bing.png" class="message-avatar" alt="Microsoft Bing">
                                         <div class="message">
                                                 <span class="message-sender">
                                                     Bing.com
@@ -221,7 +221,7 @@ Purchase: http://wrapbootstrap.com
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img src="/Public/Admin/img/avatars/adam-jansen.jpg" class="message-avatar" alt="Divyia Austin">
+                                        <img src="/Public/Admin/resource/img/avatars/adam-jansen.jpg" class="message-avatar" alt="Divyia Austin">
                                         <div class="message">
                                                 <span class="message-sender">
                                                     Nicolas
@@ -318,7 +318,7 @@ Purchase: http://wrapbootstrap.com
                         <li>
                             <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <div class="avatar" title="View your public profile">
-                                    <img src="/Public/Admin/img/avatars/adam-jansen.jpg">
+                                    <img src="/Public/Admin/resource/img/avatars/adam-jansen.jpg">
                                 </div>
                                 <section>
                                     <h2><span class="profile"><span>大智&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></h2>
@@ -331,7 +331,7 @@ Purchase: http://wrapbootstrap.com
                                 <!--Avatar Area-->
                                 <li>
                                     <div class="avatar-area">
-                                        <img src="/Public/Admin/img/avatars/adam-jansen.jpg" class="avatar">
+                                        <img src="/Public/Admin/resource/img/avatars/adam-jansen.jpg" class="avatar">
                                         <span class="caption">设置头像</span>
                                     </div>
                                 </li>
@@ -704,9 +704,9 @@ Purchase: http://wrapbootstrap.com
                                             <div class="dept-root well with-header">
                                                 <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级部门</div>
                                                 <ul class="tree_menu">
-                                                    <li>
-                                                        <a data-node="1"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
-                                                    </li>
+                                                    <!--<li>
+                                                        <a data-node="0"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
+                                                    </li>-->
                                                 </ul>
                                             </div>
                                         </div>
@@ -777,14 +777,14 @@ Purchase: http://wrapbootstrap.com
 <!-- Main Container -->
 
 <!--Basic Scripts-->
-<script src="/Public/Admin/js/jquery-2.0.3.min.js"></script>
-<script src="/Public/Admin/js/bootstrap.min.js"></script>
-<script src="/Public/Admin/js/bootbox/bootbox.js"></script>
-<script src="/Public/Admin/js/toastr/toastr.js"></script>
+<script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
+<script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
+<script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
+<script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
 
 <!--Beyond Scripts-->
-<script src="/Public/Admin/js/beyond.min.js"></script>
-<script src="/Public/Admin/js/lib.js"></script>
+<script src="/Public/Admin/resource/js/beyond.min.js"></script>
+<script src="/Public/Admin/resource/js/lib.js"></script>
 
 </body>
 <!--  /Body -->

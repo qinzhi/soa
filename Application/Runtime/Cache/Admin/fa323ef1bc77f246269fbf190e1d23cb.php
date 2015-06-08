@@ -9,23 +9,23 @@
     <meta name="description" content="login" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="/Public/Admin/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Public/Admin/resource/img/favicon.png" type="image/x-icon">
     <!--Basic Styles-->
-    <link href="/Public/Admin/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/weather-icons.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/weather-icons.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/font-awesome.min.css" rel="stylesheet" />
 
     <!--Beyond styles-->
-    <link href="/Public/Admin/css/soa.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/css/login.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/soa.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/login.css" rel="stylesheet" />
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    <script src="/Public/Admin/js/skins.min.js"></script>
+    <script src="/Public/Admin/resource/js/skins.min.js"></script>
 </head>
 <body>
 <div class="login-screen">
     <div class="login">
         <div class="login-icon">
-            <img alt="Welcome to 轻微OA" src="/Public/Admin/img/login/icon.png">
+            <img alt="Welcome to 轻微OA" src="/Public/Admin/resource/img/login/icon.png">
             <h3>
                 Welcome to
                 <small>轻微OA</small>

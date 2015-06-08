@@ -1,15 +1,5 @@
 $(function(){
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-52103994-1', 'auto');
-    ga('send', 'pageview');
-
-    $('.dept-root .tree_menu li').append($('.tissue_tree > div.well').html());
+    $('.dept-root').append($('.tissue_tree > div.well').html());
 
     var dept = {
         showData : function(value){
@@ -24,7 +14,7 @@ $(function(){
             }
             $('.plugins_dept- form').find('input[name=p_name]').val(p_name);
             $('.plugins_dept- form').find('select[name=grade_id]')
-                                .find('option[value=' + value.dept_grade_id + ']').attr('selected',true);
+                .find('option[value=' + value.dept_grade_id + ']').attr('selected',true);
 
             $('.plugins_dept- form').find('input[name=sort]').val(value.sort);
             $('.plugins_dept- form').find('input[name=remark]').val(value.remark);
@@ -102,27 +92,27 @@ $(function(){
     });
 
     $('#del_dept').click(function(){
-       if(dept.id){
-           bootbox.confirm("是否删除?", function (result) {
-               if (result) {
-                   if(dept.id){
-                       set_loading('show');
-                       $.post('/addressbook/del_dept',{id:dept.id},function(data){
-                           if(data==3){
-                               $('a[data-node=' + dept.id + ']').parent().remove();
-                               delete dept.id;
-                               Notify('删除成功', 'bottom-right', '5000', 'success', 'fa-check', true);
-                           }else if(data==-3){
-                               Notify('删除失败', 'bottom-right', '5000', 'danger', 'fa-bolt', true);
-                           }
-                           set_loading('hide');
-                       });
-                   }
-               }
-           });
-       }else{
+        if(dept.id){
+            bootbox.confirm("是否删除?", function (result) {
+                if (result) {
+                    if(dept.id){
+                        set_loading('show');
+                        $.post('/addressbook/del_dept',{id:dept.id},function(data){
+                            if(data==3){
+                                $('a[data-node=' + dept.id + ']').parent().remove();
+                                delete dept.id;
+                                Notify('删除成功', 'bottom-right', '5000', 'success', 'fa-check', true);
+                            }else if(data==-3){
+                                Notify('删除失败', 'bottom-right', '5000', 'danger', 'fa-bolt', true);
+                            }
+                            set_loading('hide');
+                        });
+                    }
+                }
+            });
+        }else{
 
-       }
+        }
     });
 
     $('#update_dept').click(function(){
@@ -133,7 +123,7 @@ $(function(){
             $.post('/addressbook/update_dept',{params:params},function(data){
                 if(data==2){
                     $('a[data-node=' + dept.id + ']').find('span')
-                                                        .text($('.plugins_dept- form').find('input[name=name]').val());
+                        .text($('.plugins_dept- form').find('input[name=name]').val());
                     Notify('更新成功', 'bottom-right', '5000', 'success', 'fa-check', true);
                 }else if(data==-2){
                     Notify('更新失败', 'bottom-right', '5000', 'danger', 'fa-bolt', true);

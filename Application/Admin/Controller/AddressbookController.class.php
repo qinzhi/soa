@@ -11,23 +11,26 @@ namespace Admin\Controller;
 
 class AddressbookController extends AdminController {
 
-    private $dept;
+    private $dept,$position;
 
     public function __construct(){
         parent::__construct();
         $this->dept =   D('Dept');
+        $this->position =   D("Position");
+        $this->rank = D('Rank');
     }
 
     public function index(){
         $this->display();
     }
 
-    public function frame(){
+    public function organ(){
         if(!empty($_POST)){
             if($_POST['type'] == 'add'){
                 $this->add_dept($_POST);
             }
         }
+        $this->assign('rank',$this->rank->select());
         $this->assign('depts',$this->dept->get_depts());
         $this->display();
     }
@@ -73,7 +76,7 @@ class AddressbookController extends AdminController {
             $data   =   array(
                 'id'   =>  $id
                 ,'name'  =>  $name
-                ,'parentid' =>  empty($p_id) ? 1 : $p_id
+                ,'parentid' =>  $p_id
                 ,'order'    =>  $sort
             );
             $result = $this->_wechat->update_department($data);
@@ -104,5 +107,105 @@ class AddressbookController extends AdminController {
         }else{
             echo DB_EXEC_DELETE_FAIL;
         }
+    }
+
+    public function position(){
+        if(!empty($_POST)){
+            if($_POST['type'] == 'add'){
+                $this->add_position($_POST);
+            }
+        }
+        $this->assign('position',$this->position->select());
+        $this->display();
+    }
+
+    private function add_position($params){
+        $this->position->create();
+        $this->position->name = $params['name'];
+        $this->position->status = $params['status'];
+        $this->position->sort = $params['sort'];
+        $this->position->remark = $params['remark'];
+        $this->position->post_time = time();
+        $this->position->add();
+        $this->assign('exec_status',DB_EXEC_ADD_SUCCESS);
+    }
+
+    public function get_position(){
+        $id = (int)$_POST['id'];
+        $position   =   $this->position->find($id);
+        echo is_array($position) ? json_encode($position) : '';
+    }
+
+    public function update_position(){
+        if($_POST['params']){
+            parse_str($_POST['params']);
+        }
+        if($id){
+                $this->position->find($id);
+                $this->position->name = $name;
+                $this->position->status = $status;
+                $this->position->sort = $sort;
+                $this->position->remark = $remark;
+                $result = $this->position->save();
+                echo $result ? DB_EXEC_EDIT_SUCCESS : DB_EXEC_EDIT_FAIL;
+        }else{
+            echo DB_EXEC_EDIT_FAIL;
+        }
+    }
+
+    public function del_position(){
+        $id = (int)$_POST['id'];
+        $result = $this->position->delete($id);
+        echo $result ? DB_EXEC_DELETE_SUCCESS : DB_EXEC_DELETE_FAIL;
+    }
+
+    public function rank(){
+        if(!empty($_POST)){
+            if($_POST['type'] == 'add'){
+                $this->add_rank($_POST);
+            }
+        }
+        $this->assign('rank',$this->rank->select());
+        $this->display();
+    }
+
+    private function add_rank($params){
+        $this->rank->create();
+        $this->rank->name = $params['name'];
+        $this->rank->status = $params['status'];
+        $this->rank->sort = $params['sort'];
+        $this->rank->remark = $params['remark'];
+        $this->rank->post_time = time();
+        $this->rank->add();
+        $this->assign('exec_status',DB_EXEC_ADD_SUCCESS);
+    }
+
+    public function get_rank(){
+        $id = (int)$_POST['id'];
+        $position   =   $this->rank->find($id);
+        echo is_array($position) ? json_encode($position) : '';
+    }
+
+    public function update_rank(){
+        if($_POST['params']){
+            parse_str($_POST['params']);
+        }
+        if($id){
+            $this->rank->find($id);
+            $this->rank->name = $name;
+            $this->rank->status = $status;
+            $this->rank->sort = $sort;
+            $this->rank->remark = $remark;
+            $result = $this->rank->save();
+            echo $result ? DB_EXEC_EDIT_SUCCESS : DB_EXEC_EDIT_FAIL;
+        }else{
+            echo DB_EXEC_EDIT_FAIL;
+        }
+    }
+
+    public function del_rank(){
+        $id = (int)$_POST['id'];
+        $result = $this->rank->delete($id);
+        echo $result ? DB_EXEC_DELETE_SUCCESS : DB_EXEC_DELETE_FAIL;
     }
 }

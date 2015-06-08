@@ -255,8 +255,8 @@
                 PlaySound = 1;
                 if (isIE8orlower() == 0) {
                     var audioElement = document.createElement("audio");
-                    audioElement.setAttribute("src", "/Public/Admin/sound/alert.mp3");
-                    $.get();
+                    audioElement.setAttribute("src", "/Public/Admin/resource/sound/alert.mp3");
+                    //$.get();
                     audioElement.addEventListener("load", function () {
                         audioElement.play()
                     }, true);

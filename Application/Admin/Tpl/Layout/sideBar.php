@@ -15,17 +15,17 @@
         </a>
         <ul class="submenu">
             <li class="active">
-                <a href="/addressbook/frame">
+                <a href="/addressbook/organ">
                     <span class="menu-text">组织图</span>
                 </a>
             </li>
             <li>
-                <a href="tables-data.html">
+                <a href="/addressbook/position">
                     <span class="menu-text">职位</span>
                 </a>
             </li>
             <li>
-                <a href="tables-data.html">
+                <a href="/addressbook/rank">
                     <span class="menu-text">部门级别</span>
                 </a>
             </li>

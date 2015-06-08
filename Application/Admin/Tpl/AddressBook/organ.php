@@ -42,48 +42,6 @@
                                         }
                                     }
                                 };echo $show_dept($depts);?>
-                                <!--<li>
-                                    <a data-node="4"><i class="fa fa-angle-right level1"></i><span>小微企业</span></a>
-                                    <ul class="tree_menu">
-                                        <li>
-                                            <a data-node="5" class=""><i class="fa fa-angle-right level2"></i><span>总经办</span></a>
-                                        </li>
-                                        <li>
-                                            <a data-node="6" class=""><i class="fa fa-angle-right level2"></i><span>管理部</span></a>
-                                            <ul class="tree_menu">
-                                                <li>
-                                                    <a data-node="24" class=""><i class="fa fa-angle-right level3"></i><span>总务科</span></a>
-                                                </li>
-                                                <li>
-                                                    <a data-node="23" class=""><i class="fa fa-angle-right level3"></i><span>人事科</span></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a data-node="8" class=""><i class="fa fa-angle-right level2"></i><span>财务部</span></a>
-                                            <ul class="tree_menu">
-                                                <li>
-                                                    <a data-node="25" class=""><i class="fa fa-angle-right level3"></i><span>会计科</span></a>
-                                                </li>
-                                                <li>
-                                                    <a data-node="26" class=""><i class="fa fa-angle-right level3"></i><span>金融科</span></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a data-node="7" class=""><i class="fa fa-angle-right level2"></i><span>销售部</span></a>
-                                        </li>
-                                        <li>
-                                            <a data-node="21" class=""><i class="fa fa-angle-right level2"></i><span>采购部</span></a>
-                                        </li>
-                                        <li>
-                                            <a data-node="3" class=""><i class="fa fa-angle-right level2"></i><span>IT部</span></a>
-                                        </li>
-                                        <li>
-                                            <a data-node="2" class=""><i class="fa fa-angle-right level2"></i><span>运营部</span></a>
-                                        </li>
-                                    </ul>
-                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -117,9 +75,9 @@
                                             <div class="dept-root well with-header">
                                                 <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级部门</div>
                                                 <ul class="tree_menu">
-                                                    <li>
-                                                        <a data-node="1"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
-                                                    </li>
+                                                    <!--<li>
+                                                        <a data-node="0"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
+                                                    </li>-->
                                                 </ul>
                                             </div>
                                         </div>
@@ -131,8 +89,9 @@
                                     <div class="col-lg-8">
                                         <select name="grade_id" class="form-control" autocomplete="off">
                                             <option value="">选择部门级别</option>
-                                            <option value="1">科</option>
-                                            <option value="2">部</option>
+                                            <volist name="rank" id="vo">
+                                                <option value="{$vo.id}">{$vo.name}</option>
+                                            </volist>
                                         </select>
                                     </div>
                                 </div>

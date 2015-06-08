@@ -20,6 +20,9 @@ define('BIND_MODULE','Admin');
 //应用名称
 define('APP_NAME','轻微OA');
 
+//项目路径
+define('PROJECT_PATH',$_SERVER['DOCUMENT_ROOT']);
+
 // 定义应用目录
 define('APP_PATH','./Application/');
 
