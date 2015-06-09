@@ -60,3 +60,6 @@ ul.tree_menu a.active i {
 .tree_menu .level4 {
     margin-left: 68px;
 }
+.plugins_member- .checkbox{margin: 0;}
+.plugins_member- .checkbox label{padding-left: 5px;text-align:center;display:block}
+select{min-width: 120px;}

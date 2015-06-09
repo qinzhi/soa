@@ -18,6 +18,7 @@ class AddressbookController extends AdminController {
         $this->dept =   D('Dept');
         $this->position =   D("Position");
         $this->rank = D('Rank');
+        $this->member = D('Member');
     }
 
     public function index(){
@@ -207,5 +208,42 @@ class AddressbookController extends AdminController {
         $id = (int)$_POST['id'];
         $result = $this->rank->delete($id);
         echo $result ? DB_EXEC_DELETE_SUCCESS : DB_EXEC_DELETE_FAIL;
+    }
+
+    public function member(){
+        if(!empty($_POST)){
+            if($_POST['type'] == 'add'){
+                $this->add_member($_POST);
+            }
+        }
+        $this->display();
+    }
+
+    public function add_member($params){
+        $data = array(
+            'userid' => $params['account'],
+            'name' => $params['name'],
+            'department' => $params['name'],
+            'position' => $params['position'],
+            'name' => $params['name'],
+            'name' => $params['name'],
+        );
+        $this->member->create();
+        $this->member->name = $params['name'];
+        $this->member->account = $params['account'];
+        $this->member->letter = get_letter($this->member->name);
+        $this->member->avatar = $params['avatar'];
+        $this->member->email = $params['email'];
+        $this->member->qq = $params['qq'];
+        $this->member->weixinid = $params['weixinid'];
+        $this->member->office_tel = $params['office_tel'];
+        $this->member->mobile_tel = $params['mobile_tel'];
+        $this->member->sex = $params['sex'];
+        $this->member->birthday = $params['birthday'];
+        $this->member->site = $params['site'];
+        $this->member->duty = $params['duty'];
+        $this->member->post_time = time();
+        $this->member->update_time = time();
+        //$this->member->add();
     }
 }

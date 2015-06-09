@@ -34,15 +34,6 @@
                                     endfor;
                                 endif;
                             };$show_dept($depts,1);?>
-                            <ul class="tree_menu">
-                                <?php $show_dept = function($depts){
-                                    if(!empty($depts) && is_array($depts)){
-                                        foreach($depts as $key=>$value){
-                                            echo '';
-                                        }
-                                    }
-                                };echo $show_dept($depts);?>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">

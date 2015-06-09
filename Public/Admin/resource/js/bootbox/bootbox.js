@@ -637,18 +637,21 @@
       }
     });
 
-    /*
-    dialog.on("show.bs.modal", function() {
+
+    /*dialog.on("show.bs.modal", function() {
       // sadly this doesn't work; show is called *just* before
       // the backdrop is added so we'd need a setTimeout hack or
       // otherwise... leaving in as would be nice
       if (options.backdrop) {
         dialog.next(".modal-backdrop").addClass("bootbox-backdrop");
       }
-    });
-    */
+    });*/
+
 
     dialog.on("shown.bs.modal", function() {
+    if(options.events){
+        //options.events.show();
+    }
       dialog.find(".btn-primary:first").focus();
     });
 

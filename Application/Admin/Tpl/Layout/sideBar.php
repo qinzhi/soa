@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a href="tables-data.html">
+                <a href="/addressbook/member">
                     <span class="menu-text">员工登记</span>
                 </a>
             </li>

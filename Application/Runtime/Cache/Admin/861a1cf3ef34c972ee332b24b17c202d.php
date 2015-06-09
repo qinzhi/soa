@@ -448,7 +448,7 @@ Purchase: http://wrapbootstrap.com
                 </a>
             </li>
             <li>
-                <a href="tables-data.html">
+                <a href="/addressbook/member">
                     <span class="menu-text">员工登记</span>
                 </a>
             </li>
@@ -723,6 +723,7 @@ Purchase: http://wrapbootstrap.com
 <!--Basic Scripts-->
 <script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
+<script src="/Public/Admin/resource/js/datetime/bootstrap-datepicker.js"></script>
 <script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
 <script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
 

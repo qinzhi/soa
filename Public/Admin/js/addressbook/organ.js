@@ -111,7 +111,7 @@ $(function(){
                 }
             });
         }else{
-
+            Notify('请选择部门', 'bottom-right', '5000', 'warning', 'fa-warning', true);
         }
     });
 
@@ -131,7 +131,7 @@ $(function(){
                 set_loading('hide');
             });
         }else{
-            Notify('请先选择部门', 'bottom-right', '5000', 'warning', 'fa-warning', true);
+            Notify('请选择部门', 'bottom-right', '5000', 'warning', 'fa-warning', true);
         }
 
     });

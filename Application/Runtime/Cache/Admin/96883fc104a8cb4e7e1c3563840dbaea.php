@@ -448,7 +448,7 @@ Purchase: http://wrapbootstrap.com
                 </a>
             </li>
             <li>
-                <a href="/addressbook/member">
+                <a href="tables-data.html">
                     <span class="menu-text">员工登记</span>
                 </a>
             </li>
@@ -609,118 +609,20 @@ Purchase: http://wrapbootstrap.com
             <div class="page-body">
                 <!-- Your Content Goes Here -->
                 
-<div class="row">
-    <div class="col-lg-12 col-sm-12 col-xs-12">
-        <div class="widget">
-            <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px">
-                <a class="btn btn-success" id="add_dept" href="javascript:void(0);">添加</a>
-                <a class="btn btn-success" id="update_dept" href="javascript:void(0);">保存</a>
-                <span> | </span>
-                <a class="btn btn-danger" id="del_dept" href="javascript:void(0);">删除</a>
-            </div><!--Widget Header-->
-            <div class="widget-body plugins_dept-">
-                <div class="row">
-                    <div class="col-xs-6 col-md-4 tissue_tree">
-                        <div class="well">
-                            <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $count++; for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
-                                            <a data-node="'.$depts[$i]['id'].'">
-                                                <i class="fa fa-angle-right level' . $count . '"></i>
-                                                <span>'.$depts[$i]['name'].'</span>
-                                            </a>'; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-8">
-                        <div class="well">
-                            <input id="id" type="hidden"/>
-                            <form class="form-horizontal bv-form form-dept">
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">名称*：</label>
-                                    <div class="col-lg-8">
-                                        <input name="name" value="" class="form-control" type="text" autocomplete="off">
-                                    </div>
-                                </div>
 
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">简称*：</label>
-                                    <div class="col-lg-8">
-                                        <input name="short_name" class="form-control" type="text" autocomplete="off">
-                                    </div>
-                                </div>
+<script>
+    $(function(){
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
 
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">上级部门*：</label>
-                                    <div class="col-lg-8">
-                                        <div class="input-group">
-                                            <input name="p_name" type="text" class="form-control" autocomplete="off" disabled>
-                                            <input name="p_id" type="hidden" class="form-control" autocomplete="off">
-                                            <span class="input-group-btn">
-                                                <button type="button" class="btn btn-success select-dept">选择</button>
-                                            </span>
-                                            <div class="dept-root well with-header">
-                                                <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级部门</div>
-                                                <ul class="tree_menu">
-                                                    <!--<li>
-                                                        <a data-node="0"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
-                                                    </li>-->
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">部门级别*：</label>
-                                    <div class="col-lg-8">
-                                        <select name="grade_id" class="form-control" autocomplete="off">
-                                            <option value="">选择部门级别</option>
-                                            <?php if(is_array($rank)): $i = 0; $__LIST__ = $rank;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">排序：</label>
-                                    <div class="col-lg-8">
-                                        <input name="sort" class="form-control" type="text" autocomplete="off">
-                                    </div>
-                                </div>
-
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">其他：</label>
-                                    <div class="col-lg-8">
-                                        <span class="input-icon icon-right">
-                                            <textarea name="remark" class="form-control"  rows="5" autocomplete="off"></textarea>
-                                            <i class="fa  fa-rocket darkorange"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                        <div class="alert alert-warning fade in">
-                            <button class="close" data-dismiss="alert"> × </button>
-                            <i class="fa-fw fa fa-warning"></i>
-                            <strong>注：</strong>
-                            没有子部门且没有成员的部门才可以被删除。
-                        </div>
-
-                    </div>
-                </div>
-            </div><!--Widget Body-->
-        </div><!--Widget-->
-    </div>
-</div>
-
-<div id="addModal" style="display:none;">
-    <div class="row">
-        <div class="col-md-12">
-            <form class="form-horizontal bv-form form-dept" method="post"></form>
-        </div>
-    </div>
-</div>
+        ga('create', 'UA-52103994-1', 'auto');
+        ga('send', 'pageview');
+    });
+</script>
             </div>
             <!-- /Page Body -->
         </div>
@@ -733,7 +635,6 @@ Purchase: http://wrapbootstrap.com
 <!--Basic Scripts-->
 <script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
-<script src="/Public/Admin/resource/js/datetime/bootstrap-datepicker.js"></script>
 <script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
 <script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
 
