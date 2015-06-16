@@ -10,8 +10,6 @@ $(function(){
             var index = form.find('select[name=status]')
                             .find('option[value=' + value.status + ']').index();
             form.find('select[name=status]').get(0).selectedIndex = index;
-            form.find('select[name=status]')
-                    .find('option[value=' + value.status + ']').attr('selected',true);
 
             form.find('input[name=sort]').val(value.sort);
             form.find('input[name=remark]').val(value.remark);

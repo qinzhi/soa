@@ -216,34 +216,107 @@ class AddressbookController extends AdminController {
                 $this->add_member($_POST);
             }
         }
+        $page = !empty($_POST['page']) ? (int)$_POST['page'] : 1;
+        $limit = 10;
+        $offset = ($page - 1) * $limit;
+        $total = $this->member->get_total();
+        $page_num = ceil( $total / $limit );
+        $members = $this->member->get_members($offset,$limit);
+        $this->assign('page_num',$page_num);
+        $this->assign('members',$members);
+        $this->assign('position',$this->position->select());
+        $this->assign('depts',$this->dept->get_depts());
         $this->display();
+    }
+
+    public function get_member(){
+        $id = (int)$_POST['id'];
+        $member   =   $this->member->find($id);
+        echo is_array($member) ? json_encode($member) : '';
     }
 
     public function add_member($params){
         $data = array(
             'userid' => $params['account'],
             'name' => $params['name'],
-            'department' => $params['name'],
+            'department' => 2,//$params['dept_id'],
+            'mobile' => $params['mobile_tel'],
             'position' => $params['position'],
-            'name' => $params['name'],
-            'name' => $params['name'],
+            'gender' => $params['sex'],
+            'email' => $params['email'],
+            'weixinid' => $params['weixinid']
         );
-        $this->member->create();
-        $this->member->name = $params['name'];
-        $this->member->account = $params['account'];
-        $this->member->letter = get_letter($this->member->name);
-        $this->member->avatar = $params['avatar'];
-        $this->member->email = $params['email'];
-        $this->member->qq = $params['qq'];
-        $this->member->weixinid = $params['weixinid'];
-        $this->member->office_tel = $params['office_tel'];
-        $this->member->mobile_tel = $params['mobile_tel'];
-        $this->member->sex = $params['sex'];
-        $this->member->birthday = $params['birthday'];
-        $this->member->site = $params['site'];
-        $this->member->duty = $params['duty'];
-        $this->member->post_time = time();
-        $this->member->update_time = time();
-        //$this->member->add();
+        $result = $this->_wechat->create_user($data);
+        if($result->errcode == 0){
+            $this->member->create();
+            $this->member->name = $params['name'];
+            $this->member->account = $params['account'];
+            $this->member->dept_id  =$params['dept_id'];
+            $this->member->position_id = $params['position'];
+            $this->member->letter = get_letter($this->member->name);
+            $this->member->avatar = $params['avatar'];
+            $this->member->email = $params['email'];
+            $this->member->qq = $params['qq'];
+            $this->member->weixinid = $params['weixinid'];
+            $this->member->office_tel = $params['office_tel'];
+            $this->member->mobile_tel = $params['mobile_tel'];
+            $this->member->sex = $params['sex'];
+            $this->member->birthday = $params['birthday'];
+            $this->member->site = $params['site'];
+            $this->member->duty = $params['duty'];
+            $this->member->status = $params['status'];
+            $this->member->post_time = time();
+            $this->member->update_time = time();
+            $this->member->add();
+            $this->assign('exec_status',DB_EXEC_ADD_SUCCESS);
+        }else{
+            $this->assign('exec_status',DB_EXEC_ADD_FAIL);
+        }
+    }
+
+    public function update_member(){
+        if($_POST['params']){
+            parse_str($_POST['params']);
+        }
+        if($id){
+            $data   =   array(
+                'userid' => $account,
+                'name' => $name,
+                'department' => $dept_id,//$params['dept_id'],
+                'mobile' => $mobile_tel,
+                'position' => $position,
+                'gender' => trim($sex),
+                'enable' => trim($status),
+                'email' => $email,
+                'weixinid' => trim($weixinid)
+            );
+            $result = $this->_wechat->update_user($data);
+            if($result->errcode == 0){
+                $this->member->find($id);
+                $this->member->name = $name;
+                $this->member->account = $account;
+                $this->member->dept_id  = $dept_id;
+                $this->member->position_id = $position_id;
+                $this->member->letter = get_letter($this->member->name);
+                $this->member->avatar = $avatar;
+                $this->member->email = $email;
+                $this->member->qq = $qq;
+                $this->member->weixinid = $weixinid;
+                $this->member->office_tel = $office_tel;
+                $this->member->mobile_tel = $mobile_tel;
+                $this->member->sex = $sex;
+                $this->member->birthday = $birthday;
+                $this->member->site = $site;
+                $this->member->duty = $duty;
+                $this->member->status = $status;
+                $this->member->update_time = time();
+                $this->member->save();
+                echo DB_EXEC_EDIT_SUCCESS;
+            }else{
+                echo DB_EXEC_EDIT_FAIL;
+            }
+        }else{
+            echo DB_EXEC_EDIT_FAIL;
+        }
     }
 }

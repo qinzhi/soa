@@ -33,7 +33,9 @@ Purchase: http://wrapbootstrap.com
     <link href="__CSS__/typicons.min.css" rel="stylesheet" />
     <link href="__CSS__/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <script src="__JS__/jquery-2.0.3.min.js"></script>
 
+    <script src="__JS__/lib.js"></script>
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="__JS__/skins.min.js"></script>
 </head>

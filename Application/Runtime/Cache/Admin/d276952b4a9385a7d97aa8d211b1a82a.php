@@ -622,11 +622,11 @@ Purchase: http://wrapbootstrap.com
                 <div class="row">
                     <div class="col-xs-6 col-md-4 tissue_tree">
                         <div class="well">
-                            <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $count++; for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
+                            <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
                                             <a data-node="'.$depts[$i]['id'].'">
                                                 <i class="fa fa-angle-right level' . $count . '"></i>
                                                 <span>'.$depts[$i]['name'].'</span>
-                                            </a>'; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
+                                            </a>'; $count++; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">

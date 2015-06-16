@@ -33,7 +33,9 @@ Purchase: http://wrapbootstrap.com
     <link href="/Public/Admin/resource/css/typicons.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 
+    <script src="/Public/Admin/resource/js/lib.js"></script>
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="/Public/Admin/resource/js/skins.min.js"></script>
 </head>
@@ -614,7 +616,7 @@ Purchase: http://wrapbootstrap.com
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px;">
                 <div class="widget-caption">
-                    <form class="form-inline" role="form">
+                    <form class="form-inline" role="form" autocomplete="off">
                         <div class="form-group">
                             <label for="exampleInputEmail2">&nbsp;部门:&nbsp;</label>
                             <select class="input-sm">
@@ -644,37 +646,33 @@ Purchase: http://wrapbootstrap.com
                             <table class="table table-bordered table-condensed table-hover table-focus">
                                 <thead>
                                 <tr>
-                                    <th width="10%">
+                                    <th width="25%">
                                         <div class="checkbox">
                                             <label>
-                                                <input class="colored-blue" type="checkbox"><span class="text"></span>
+                                                <input class="colored-blue" type="checkbox" autocomplete="off"><span class="text" style="font-weight: bold">编号</span>
                                             </label>
                                         </div>
                                     </th>
-                                    <th width="30%">
-                                        员工编号
-                                    </th>
-                                    <th width="30%">
+                                    <th width="50%">
                                         姓名
                                     </th>
-                                    <th width="30%">
+                                    <th width="25%">
                                         状态
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-node="1">
-                                        <th>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input class="colored-blue" type="checkbox"><span class="text"></span>
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    <?php if(is_array($members)): $i = 0; $__LIST__ = $members;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr data-node="<?php echo ($vo["id"]); ?>">
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input class="colored-blue" type="checkbox" value="<?php echo ($vo["id"]); ?>"><span class="text"><?php echo ($vo["id"]); ?></span>
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td><?php echo ($vo["name"]); ?></td>
+                                            <td><?php echo ($vo['status'] == 1?'启用':'禁用'); ?></td>
+                                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -686,10 +684,13 @@ Purchase: http://wrapbootstrap.com
                                     <tbody>
                                         <tr>
                                             <th> 账号*  </th>
-                                            <td colspan="2"> <input class="form-control" type="text" readonly="readonly" msg="请输入账号" check="require" name="account"> </td>
-                                            <td class="col-20" rowspan="3">
-                                                <input type="hidden" name="avatar"/>
-                                                <img name="emp_pic" class="img-thumbnail col-12" src="/Public/Admin/resource/img/avatars/adam-jansen.jpg">
+                                            <td colspan="2"> <input class="form-control" type="text" msg="请输入账号" check="require" name="account"> </td>
+                                            <td class="col-20" rowspan="3" style="text-align: center; vertical-align: middle;">
+                                                <input type="hidden" name="avatar" id="avatar"/>
+                                                <div class="avatar-area">
+                                                    <img class="avatar" src="/Public/Admin/resource/img/avatars/adam-jansen.jpg">
+                                                    <span class="caption">上传图片</span>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -707,24 +708,24 @@ Purchase: http://wrapbootstrap.com
                                                     </span>
                                                     <div class="dept-root well with-header">
                                                         <div class="header bordered-sky" style="position: absolute;top: 0;">请选择部门</div>
-                                                        <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $count++; for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
+                                                        <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
                                                                         <a data-node="'.$depts[$i]['id'].'">
                                                                             <i class="fa fa-angle-right level' . $count . '"></i>
                                                                             <span>'.$depts[$i]['name'].'</span>
-                                                                        </a>'; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
+                                                                        </a>'; $count++; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th> 性别 </th>
-                                            <td>
+                                            <th width="20%"> 性别 </th>
+                                            <td width="30%">
                                                 <select name="sex" class="form-control">
-                                                    <option value="0">男</option>
-                                                    <option value="1">女</option>
+                                                    <option value="1">男</option>
+                                                    <option value="2">女</option>
                                                 </select>
                                             </td>
-                                            <th> 生日 </th>
+                                            <th width="20%"> 生日 </th>
                                             <td>
                                                 <input name="birthday" class="form-control date-picker" type="text" data-date-format="yyyy-mm-dd" readonly>
                                             </td>
@@ -732,25 +733,26 @@ Purchase: http://wrapbootstrap.com
                                         <tr>
                                             <th> 职位* </th>
                                             <td>
+                                                <input type="hidden" name="position_id"/>
                                                 <select name="position" class="form-control">
-                                                    <option value="">选择部门级别</option>
-                                                    <?php if(is_array($position)): $i = 0; $__LIST__ = $position;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                                    <option value="">选择职位</option>
+                                                    <?php if(is_array($position)): $i = 0; $__LIST__ = $position;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["name"]); ?>" data-node="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                                 </select>
                                             </td>
 
-                                            <th> 住址 </th>
-                                            <td>
-                                                <input name="site" class="form-control" type="text" msg="请输入住址">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th> 微信号* </th>
-                                            <td>
-                                                <input name="weixin" class="form-control" type="text" msg="请输入微信号">
-                                            </td>
                                             <th> QQ号 </th>
                                             <td>
                                                 <input name="qq" class="form-control" type="text" msg="请输入QQ号">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th> 住址 </th>
+                                            <td>
+                                                <input name="site" class="form-control" type="text">
+                                            </td>
+                                            <th> 微信号* </th>
+                                            <td>
+                                                <input name="weixinid" class="form-control" type="text" msg="请输入微信号">
                                             </td>
                                         </tr>
                                         <tr>
@@ -780,7 +782,7 @@ Purchase: http://wrapbootstrap.com
                                             <td colspan="3">
                                                 <select name="status">
                                                     <option value="1">启用</option>
-                                                    <option value="-1">禁用</option>
+                                                    <option value="0">禁用</option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -823,15 +825,14 @@ Purchase: http://wrapbootstrap.com
 <!-- Main Container -->
 
 <!--Basic Scripts-->
-<script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
 <script src="/Public/Admin/resource/js/datetime/bootstrap-datepicker.js"></script>
 <script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
 <script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
-
+<script src="/Public/Admin/CKeditor/ckeditor.js"></script>
+<script src="/Public/Admin/CKfinder/ckfinder.js"></script>
 <!--Beyond Scripts-->
 <script src="/Public/Admin/resource/js/beyond.min.js"></script>
-<script src="/Public/Admin/resource/js/lib.js"></script>
 
 <?php
  $src = array_shift(C('TMPL_PARSE_STRING')) . '/JS' . $_SERVER["REQUEST_URI"]; if(is_file(PROJECT_PATH . $src . '.js')){ echo '<script src="' . $src . '.js"></script>'; } ?>

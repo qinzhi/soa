@@ -6,6 +6,29 @@
  * Time: 15:56
  */
 
+if(!function_exists('create_editor')){
+    function create_editor($id,$value='',$config=array()){
+        // Include the CKEditor class.
+        include_once "Public/Admin/Ckeditor/ckeditor.php";
+        // Create a class instance.
+        $CKEditor = new CKEditor( 'http://' . $_SERVER['HTTP_HOST'] . '/Public/Admin/Ckeditor/');
+        // Path to the CKEditor directory, ideally use an absolute path instead of a relative dir.
+        //   $CKEditor->basePath = '/ckeditor/'
+        // If not set, CKEditor will try to detect the correct path.
+
+        // Replace a textarea element with an id (or name) of "editor1".
+
+        $_config['filebrowserBrowseUrl'] = '/Public/Admin/Ckfinder/ckfinder.html';
+        $_config['filebrowserImageBrowseUrl'] = '/Public/Admin/Ckfinder/ckfinder.html?Type=Images';
+        //$_config['filebrowserUploadUrl'] = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+        //$_config['filebrowserImageUploadUrl'] = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+        if(!empty($config)){
+            $_config = array_merge($_config,$config);
+        }
+        $CKEditor->editor("describe",$value,$_config);
+        //$CKEditor->replace("describe");
+    }
+}
 
 function get_letter($string) {
     $charlist = mb_str_split($string);

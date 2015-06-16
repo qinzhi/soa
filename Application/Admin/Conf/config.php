@@ -2,14 +2,14 @@
 
 return array(
 
-    "LOAD_EXT_FILE"=>"fb",
-
     'SHOW_ERROR_MSG'        =>  true,
 
     'DEFAULT_V_LAYER'       =>  'Tpl',
 
     'TMPL_PARSE_STRING'  =>array(
         '__PUBLIC__' => '/Public/Admin', // 更改默认的/Public 替换规则
+        '__CKEDITOR__' => '/Public/Admin/CKeditor', // 富文本编辑器
+        '__CKFINDER__' => '/Public/Admin/CKfinder', // 图片资源管理器
         '__JS__'     => '/Public/Admin/resource/js', // 增加新的JS类库路径替换规则
         '__CSS__' => '/Public/Admin/resource/css', // 增加新的CSS类库路径替换规则
         '__IMAGE__' => '/Public/Admin/resource/img', // 增加新的img类库路径替换规则

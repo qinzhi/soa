@@ -55,11 +55,15 @@ ul.tree_menu a.active i {
     margin-left: 36px;
 }
 .tree_menu .level3 {
-    margin-left: 52px;
+    margin-left: 54px;
 }
 .tree_menu .level4 {
-    margin-left: 68px;
+    margin-left: 72px;
 }
 .plugins_member- .checkbox{margin: 0;}
-.plugins_member- .checkbox label{padding-left: 5px;text-align:center;display:block}
-select{min-width: 120px;}
+.plugins_member- .checkbox label{padding-left: 0;text-align:left;display:block}
+.plugins_member- select{min-width: 120px;}
+.avatar-area{position: relative; text-align: center;width: 128px;display: inline-table;}
+.avatar-area .avatar{width: 128px;height: 128px;}
+.avatar-area .caption{display: none;background-color: #2dc3e8;bottom: 0;color: #fff;cursor: pointer;font-size: 10px;left: 0;line-height: 9px;opacity: 0.7;padding: 7px 0;position: absolute;text-align: center;width: 128px;}
+.avatar-area:hover .caption{display: block}

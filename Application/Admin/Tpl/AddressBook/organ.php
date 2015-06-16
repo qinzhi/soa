@@ -14,7 +14,6 @@
                         <div class="well">
                             <?php $show_dept = function($depts,$count) use (&$show_dept){
                                 if(!empty($depts) && is_array($depts)):
-                                    $count++;
                                     for($i=0,$len=count($depts);$i<$len;$i++):
                                         if($i==0):
                                             echo '<ul class="tree_menu">';
@@ -24,6 +23,7 @@
                                                 <i class="fa fa-angle-right level' . $count . '"></i>
                                                 <span>'.$depts[$i]['name'].'</span>
                                             </a>';
+                                        $count++;
                                         if(!empty($depts[$i]['child'])):
                                             $show_dept($depts[$i]['child'],$count);
                                         endif;
