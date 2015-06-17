@@ -721,7 +721,7 @@ Purchase: http://wrapbootstrap.com
                                             <td>
                                                 <select name="sex" class="form-control">
                                                     <option value="0">男</option>
-                                                    <option value="1">女</option>
+                                                    <option value="1 ">女</option>
                                                 </select>
                                             </td>
                                             <th> 生日 </th>

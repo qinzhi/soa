@@ -216,6 +216,7 @@ class AddressbookController extends AdminController {
                 $this->add_member($_POST);
             }
         }
+        $this->assign('depts',$this->dept->get_depts());
         $this->display();
     }
 
