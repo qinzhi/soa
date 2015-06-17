@@ -30,6 +30,7 @@ class WeChatApi extends Model{
      */
     protected $api_url  =  array();
 
+    protected $access_token = '';
     /**
      * 接口地址
      * @var string
@@ -40,7 +41,7 @@ class WeChatApi extends Model{
         $this->CORPID   =   'wx755896948c0fb82d';
         $this->SECRET   =   '_coTBTWxo6RiJ04UE3pMnUvmLzeBpSJlVo9ffzK3K092X-8REVUnFFJcf8zQkn40';
         $this->api_url  =   C('WEIXIN_API_URL');
-        $this->ACCESS_TOKEN = $this->getToken();
+        $this->access_token = $this->getToken();
     }
 
     /**
@@ -325,8 +326,47 @@ class WeChatApi extends Model{
     }
 
 
+    ////////////////////////////////////////////  end //////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**********************************************    *******************************************************************/
+    /**********************************************  企业号应用  *******************************************************************/
+
+    public function get_app($agentid){
+        $this->url = $this->get_url(__FUNCTION__);
+        $this->send =   array(
+            'agentid' => $agentid
+        );
+        $dataStr    =   $this->format_params($this->send,'get');
+
+        $this->data = http($this->url,$dataStr);
+
+        $result =    $this->verify_data($this->data,__FUNCTION__);
+        return $result;
+    }
+
+    public function set_app($send){
+        $this->url  = $this->get_url(__FUNCTION__);
+        $this->send = $send;
+
+        $dataStr    =   $this->format_params($this->send);
+
+        $this->data = http($this->url,$dataStr,'post');
+
+        $result =    $this->verify_data($this->data,__FUNCTION__);
+        return $result;
+    }
+
+    public function get_app_list(){
+        $this->url = $this->get_url(__FUNCTION__);
+        $dataStr    =   $this->format_params(array(),'get');
+
+        $this->data = http($this->url,$dataStr);
+        $result =    $this->verify_data($this->data,__FUNCTION__);
+        return $result;
+    }
+
+    /////////////////////////////////////////////  end  ///////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**********************************************    *******************************************************************/
 
     /**
      * 格式参数
@@ -334,9 +374,9 @@ class WeChatApi extends Model{
      * @param string $method
      * @return array|string
      */
-    public function format_params($send,$method = 'post'){
+    public function format_params($send = array(),$method = 'post'){
         $send   =   array_merge($send,array(
-            'access_token' =>  $this->ACCESS_TOKEN
+            'access_token' =>  $this->access_token
         ));
         if($method == post){
             $this->url .= '?access_token=' . $this->ACCESS_TOKEN;

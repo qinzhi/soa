@@ -24,8 +24,7 @@ Purchase: http://wrapbootstrap.com
     <link href="/Public/Admin/resource/css/weather-icons.min.css" rel="stylesheet" />
 
     <!--Fonts-->
-    <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
-          rel="stylesheet" type="text/css">
+
 
     <!--Beyond styles-->
     <link id="beyond-link" href="/Public/Admin/resource/css/beyond.min.css" rel="stylesheet" />
@@ -33,7 +32,9 @@ Purchase: http://wrapbootstrap.com
     <link href="/Public/Admin/resource/css/typicons.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 
+    <script src="/Public/Admin/resource/js/lib.js"></script>
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="/Public/Admin/resource/js/skins.min.js"></script>
 </head>
@@ -424,137 +425,48 @@ Purchase: http://wrapbootstrap.com
             <span class="menu-text"> 首页 </span>
         </a>
     </li>
-    <!--通讯录-->
-    <li class="active open">
-        <a href="#" class="menu-dropdown">
-            <i class="menu-icon fa fa-group"></i>
-            <span class="menu-text"> 通讯录 </span>
-            <i class="menu-expand"></i>
-        </a>
-        <ul class="submenu">
-            <li class="active">
-                <a href="/addressbook/organ">
-                    <span class="menu-text">组织图</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/position">
-                    <span class="menu-text">职位</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/rank">
-                    <span class="menu-text">部门级别</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/member">
-                    <span class="menu-text">员工登记</span>
-                </a>
-            </li>
-        </ul>
-    </li>
 
     <!--UI Elements-->
-    <li>
+    <li class="open active">
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa fa-desktop"></i>
-            <span class="menu-text"> Elements </span>
+            <span class="menu-text"> 系统设置 </span>
 
             <i class="menu-expand"></i>
         </a>
 
         <ul class="submenu">
-            <li>
-                <a href="elements.html">
-                    <span class="menu-text">Basic Elements</span>
-                </a>
-            </li>
-            <li>
+            <li class="open active">
                 <a href="#" class="menu-dropdown">
-                                    <span class="menu-text">
-                                        Icons
-                                    </span>
+                    <span class="menu-text"> 通讯录 </span>
                     <i class="menu-expand"></i>
                 </a>
-
                 <ul class="submenu">
-                    <li>
-                        <a href="font-awesome.html">
-                            <i class="menu-icon fa fa-rocket"></i>
-                            <span class="menu-text">Font Awesome</span>
+                    <li class="active">
+                        <a href="/addressbook/organ">
+                            <span class="menu-text">组织图</span>
                         </a>
                     </li>
                     <li>
-                        <a href="glyph-icons.html">
-                            <i class="menu-icon glyphicon glyphicon-stats"></i>
-                            <span class="menu-text">Glyph Icons</span>
+                        <a href="/addressbook/position">
+                            <span class="menu-text">职位</span>
                         </a>
                     </li>
                     <li>
-                        <a href="typicon.html">
-                            <i class="menu-icon typcn typcn-location-outline"></i>
-                            <span class="menu-text"> Typicons</span>
+                        <a href="/addressbook/rank">
+                            <span class="menu-text">部门级别</span>
                         </a>
                     </li>
                     <li>
-                        <a href="weather-icons.html">
-                            <i class="menu-icon wi-day-snow"></i>
-                            <span class="menu-text">Weather Icons</span>
+                        <a href="/addressbook/member">
+                            <span class="menu-text">员工登记</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="tabs.html">
-                    <span class="menu-text">Tabs & Accordions</span>
-                </a>
-            </li>
-            <li>
-                <a href="alerts.html">
-                    <span class="menu-text">Alerts & Tooltips</span>
-                </a>
-            </li>
-            <li>
-                <a href="modals.html">
-                    <span class="menu-text">Modals & Wells</span>
-                </a>
-            </li>
-            <li>
-                <a href="buttons.html">
-                    <span class="menu-text">Buttons</span>
-                </a>
-            </li>
-            <li>
-                <a href="nestable-list.html">
-                    <span class="menu-text"> Nestable List</span>
-                </a>
-            </li>
-            <li>
-                <a href="treeview.html">
-                    <span class="menu-text">Treeview</span>
-                </a>
-            </li>
-        </ul>
-    </li>
-    <!--Tables-->
-    <li>
-        <a href="#" class="menu-dropdown">
-            <i class="menu-icon fa fa-table"></i>
-            <span class="menu-text"> Tables </span>
-
-            <i class="menu-expand"></i>
-        </a>
-
-        <ul class="submenu">
-            <li>
-                <a href="tables-simple.html">
-                    <span class="menu-text">Simple & Responsive</span>
-                </a>
-            </li>
-            <li>
-                <a href="tables-data.html">
-                    <span class="menu-text">Data Tables</span>
+                <a href="/app">
+                    <span class="menu-text"> 应用中心 </span>
                 </a>
             </li>
         </ul>
@@ -711,15 +623,14 @@ Purchase: http://wrapbootstrap.com
 <!-- Main Container -->
 
 <!--Basic Scripts-->
-<script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
 <script src="/Public/Admin/resource/js/datetime/bootstrap-datepicker.js"></script>
 <script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
 <script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
-
+<script src="/Public/Admin/CKeditor/ckeditor.js"></script>
+<script src="/Public/Admin/CKfinder/ckfinder.js"></script>
 <!--Beyond Scripts-->
 <script src="/Public/Admin/resource/js/beyond.min.js"></script>
-<script src="/Public/Admin/resource/js/lib.js"></script>
 
 <?php
  $src = array_shift(C('TMPL_PARSE_STRING')) . '/JS' . $_SERVER["REQUEST_URI"]; if(is_file(PROJECT_PATH . $src . '.js')){ echo '<script src="' . $src . '.js"></script>'; } ?>

@@ -153,7 +153,8 @@
 			var offset = this.component ? this.component.offset() : this.element.offset();
 			this.picker.css({
 				top: offset.top + this.height,
-				left: offset.left
+				left: offset.left,
+                'z-index': '99999'
 			});
 		},
 		
@@ -335,6 +336,7 @@
 	$.fn.datepicker = function ( option, val ) {
 		return this.each(function () {
 			var $this = $(this),
+
 				data = $this.data('datepicker'),
 				options = typeof option === 'object' && option;
 			if (!data) {

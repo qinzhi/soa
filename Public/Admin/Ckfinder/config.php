@@ -246,6 +246,22 @@ $config['ResourceType'][] = Array(
     'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
     'deniedExtensions' => '');
 
+$config['ResourceType'][] = Array(
+    'name' => 'voice',
+    'url' => $baseUrl . 'voice',
+    'directory' => $baseDir . 'voice',
+    'maxSize' => 0,
+    'allowedExtensions' => 'amr',
+    'deniedExtensions' => '');
+
+$config['ResourceType'][] = Array(
+    'name' => 'video',
+    'url' => $baseUrl . 'video',
+    'directory' => $baseDir . 'video',
+    'maxSize' => 0,
+    'allowedExtensions' => 'mp4',
+    'deniedExtensions' => '');
+
 /*$config['ResourceType'][] = Array(
 		'name' => 'Flash',
 		'url' => $baseUrl . 'flash',

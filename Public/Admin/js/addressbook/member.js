@@ -81,10 +81,11 @@ $(function(){
                 //$('.modal-dialog').css('width','650px !important');
                 return $("#addModal").html();
             },
-            title: "添加级别",
+            title: "添加会员",
             events: {
-                show : function(){
-                    $('.modal-dialog').css('width','650px');
+                shown : function(){
+                    $('.bootbox .date-picker').datepicker();
+                    //$('.modal-dialog').css('width','650px');
                 }
             },
             className: "modal-darkorange",

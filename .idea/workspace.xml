@@ -24,28 +24,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/Admin/Ckfinder/config.php">
+      <file leaf-file-name="sideBar.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/Layout/sideBar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="5" selection-start="6944" selection-end="6944" vertical-scroll-proportion="-2.2285714" vertical-offset="5746" max-vertical-offset="9854">
+            <state line="48" column="31" selection-start="1645" selection-end="1645" vertical-scroll-proportion="-35.657143" vertical-offset="0" max-vertical-offset="1586">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/member.php">
+      <file leaf-file-name="WeChatApi.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Lib/Api/WeChatApi.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="59" selection-start="5167" selection-end="5167" vertical-scroll-proportion="-13.228572" vertical-offset="1773" max-vertical-offset="6006">
+            <state line="379" column="11" selection-start="10984" selection-end="10984" vertical-scroll-proportion="-8.4" vertical-offset="9404" max-vertical-offset="10998">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Public/Admin/js/addressbook/member.js">
+      <file leaf-file-name="wechat.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Conf/wechat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="48" selection-start="6792" selection-end="6792" vertical-scroll-proportion="0.7622857" vertical-offset="3701" max-vertical-offset="4628">
+            <state line="28" column="0" selection-start="1335" selection-end="1335" vertical-scroll-proportion="3.7142856" vertical-offset="728" max-vertical-offset="5694">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppController.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/AppController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="48" selection-start="461" selection-end="461" vertical-scroll-proportion="-16.342857" vertical-offset="0" max-vertical-offset="858">
+              <folding>
+                <element signature="e#6#100#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/App/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="91" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.75714284" vertical-offset="248" max-vertical-offset="3562">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rank.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/rank.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="28" selection-start="776" selection-end="1895" vertical-scroll-proportion="-1.4857143" vertical-offset="312" max-vertical-offset="2600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="organ.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/organ.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="7519" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3562">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="soa.min.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/Admin/resource/css/soa.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="47" selection-start="5397" selection-end="5397" vertical-scroll-proportion="0.0" vertical-offset="1114" max-vertical-offset="2002">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="position.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/Admin/js/addressbook/position.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="20" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="3068">
               <folding />
             </state>
           </provider>
@@ -54,19 +115,8 @@
       <file leaf-file-name="lib.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/Admin/resource/js/lib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="33" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
+            <state line="30" column="0" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1014">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/Admin/Ckfinder/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="39" selection-start="501" selection-end="501" vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="598">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -81,22 +131,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Model/MemberModel.class.php" />
-        <option value="$PROJECT_DIR$/Public/Admin/js/addressbook/rank.js" />
-        <option value="$PROJECT_DIR$/Public/Admin/js/addressbook/position.js" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/AddressbookController.class.php" />
-        <option value="$PROJECT_DIR$/Public/Admin/resource/css/soa.min.css" />
-        <option value="$PROJECT_DIR$/Application/Admin/Conf/config.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Common/function.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Tpl/Layout/common.js.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/Tpl/Layout/header.php" />
+        <option value="$PROJECT_DIR$/Public/Admin/resource/js/bootbox/bootbox.js" />
+        <option value="$PROJECT_DIR$/Public/Admin/resource/js/datetime/bootstrap-datepicker.js" />
         <option value="$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/member.php" />
         <option value="$PROJECT_DIR$/Public/Admin/Ckfinder/config.php" />
-        <option value="$PROJECT_DIR$/Public/Admin/Ckfinder/config.js" />
         <option value="$PROJECT_DIR$/Public/Admin/Ckfinder/ckfinder.js" />
+        <option value="$PROJECT_DIR$/Application/Admin/Conf/wechat.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/AddressbookController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Conf/config.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/SendController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Tpl/Layout/sideBar.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Lib/Api/WeChatApi.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/AppController.class.php" />
         <option value="$PROJECT_DIR$/Public/Admin/resource/js/lib.js" />
-        <option value="$PROJECT_DIR$/Public/Admin/js/addressbook/member.js" />
+        <option value="$PROJECT_DIR$/Public/Admin/resource/css/beyond.min.css" />
+        <option value="$PROJECT_DIR$/Public/Admin/resource/css/soa.min.css" />
+        <option value="$PROJECT_DIR$/Application/Admin/Tpl/App/index.php" />
       </list>
     </option>
   </component>
@@ -136,6 +186,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,28 +247,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ckfinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -259,6 +288,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -288,17 +343,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="soa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="options.lastSelected" value="appearance" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sincere" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -306,11 +426,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Q:\www\soa\Public\Admin\resource\img" />
       <recent name="Q:\www\soa\Public\Admin" />
       <recent name="F:\workspace\soa\Public\Admin\JS\addressbook" />
       <recent name="F:\workspace\soa\Public\Admin\resource" />
       <recent name="F:\workspace\soa" />
-      <recent name="F:\workspace\soa\ThinkPHP\Common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Q:\www\soa\Application\Common\Common" />
@@ -348,15 +468,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18541667" sideWeight="0.5834254" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -365,7 +485,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41728136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4165746" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -390,107 +510,171 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Application/Runtime/Cache/Admin/7e3487ec542d20672549d2780c947652.php</url>
+          <line>615</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/Sergey-Azovskiy.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/Osvaldus-Valutis.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/Matt-Cheuvront.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/bing.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/John-Smith.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/Javi-Jimenez.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/divyia.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/adam-jansen.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/img/avatars/Stephanie-Walter.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/Ckfinder/config.php">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/SendController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="5" selection-start="6944" selection-end="6944" vertical-scroll-proportion="-2.2285714" vertical-offset="5746" max-vertical-offset="9854">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/Ckfinder/ckfinder_v1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="862">
+        <state line="14" column="30" selection-start="244" selection-end="244" vertical-scroll-proportion="-10.4" vertical-offset="0" max-vertical-offset="728">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/Ckfinder/ckfinder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="11620" selection-start="11777" selection-end="11777" vertical-scroll-proportion="0.15081206" vertical-offset="0" max-vertical-offset="862">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/Ckfinder/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="501" selection-end="501" vertical-scroll-proportion="-13.0" vertical-offset="0" max-vertical-offset="598">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#6#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/member.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="59" selection-start="5167" selection-end="5167" vertical-scroll-proportion="-13.228572" vertical-offset="1773" max-vertical-offset="6006">
+        <state line="46" column="49" selection-start="2827" selection-end="2827" vertical-scroll-proportion="0.6130952" vertical-offset="681" max-vertical-offset="6448">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Admin/js/addressbook/position.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="3068">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Runtime/Cache/Admin/7e3487ec542d20672549d2780c947652.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="548" column="27" selection-start="28701" selection-end="28701" vertical-scroll-proportion="0.48129675" vertical-offset="13862" max-vertical-offset="15574">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/css/beyond-rtl.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="862">
+          <folding>
+            <element signature="e#62159#62790#2" expanded="false" />
+            <element signature="e#80508#81139#2" expanded="false" />
+            <element signature="e#86935#87566#2" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/Layout/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="41" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.74285716" vertical-offset="312" max-vertical-offset="1404">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/Admin/resource/js/lib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="33" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806">
+        <state line="30" column="0" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1014">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Admin/js/addressbook/member.js">
+    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/css/beyond.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="48" selection-start="6792" selection-end="6792" vertical-scroll-proportion="0.7622857" vertical-offset="3701" max-vertical-offset="4628">
+        <state line="0" column="54049" selection-start="54049" selection-end="54049" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="834">
+          <folding>
+            <element signature="e#61899#62530#2" expanded="true" />
+            <element signature="e#80187#80818#2" expanded="true" />
+            <element signature="e#86612#87243#2" expanded="true" />
+            <element signature="e#114144#114775#2" expanded="true" />
+            <element signature="e#115839#116470#2" expanded="true" />
+            <element signature="e#117764#118395#2" expanded="true" />
+            <element signature="e#119742#120373#2" expanded="true" />
+            <element signature="e#121740#122371#2" expanded="true" />
+            <element signature="e#123753#124384#2" expanded="true" />
+            <element signature="e#125737#126368#2" expanded="true" />
+            <element signature="e#127692#128323#2" expanded="true" />
+            <element signature="e#129642#130273#2" expanded="true" />
+            <element signature="e#131650#132281#2" expanded="true" />
+            <element signature="e#133729#134360#2" expanded="true" />
+            <element signature="e#135760#136391#2" expanded="true" />
+            <element signature="e#137841#138472#2" expanded="true" />
+            <element signature="e#139865#140496#2" expanded="true" />
+            <element signature="e#141872#142503#2" expanded="true" />
+            <element signature="e#196845#197476#2" expanded="true" />
+            <element signature="e#210786#211215#1" expanded="true" />
+            <element signature="e#211467#211896#1" expanded="true" />
+            <element signature="e#231310#231941#2" expanded="true" />
+            <element signature="e#274446#275077#2" expanded="true" />
+            <element signature="e#301097#301354#1" expanded="true" />
+            <element signature="e#301544#301801#1" expanded="true" />
+            <element signature="e#312984#313615#2" expanded="true" />
+            <element signature="e#315965#316596#2" expanded="true" />
+            <element signature="e#344364#344995#2" expanded="true" />
+            <element signature="e#346625#347256#2" expanded="true" />
+            <element signature="e#352445#353076#2" expanded="true" />
+            <element signature="e#353551#354182#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/Layout/sideBar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="31" selection-start="1645" selection-end="1645" vertical-scroll-proportion="-35.657143" vertical-offset="0" max-vertical-offset="1586">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Lib/Api/WeChatApi.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="379" column="11" selection-start="10984" selection-end="10984" vertical-scroll-proportion="-8.4" vertical-offset="9404" max-vertical-offset="10998">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Conf/wechat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1335" selection-end="1335" vertical-scroll-proportion="3.7142856" vertical-offset="728" max-vertical-offset="5694">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Admin/resource/css/soa.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="47" selection-start="5397" selection-end="5397" vertical-scroll-proportion="0.0" vertical-offset="1114" max-vertical-offset="2002">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/AppController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="48" selection-start="461" selection-end="461" vertical-scroll-proportion="-16.342857" vertical-offset="0" max-vertical-offset="858">
+          <folding>
+            <element signature="e#6#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/organ.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="7519" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3562">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/AddressBook/rank.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="28" selection-start="776" selection-end="1895" vertical-scroll-proportion="-1.4857143" vertical-offset="312" max-vertical-offset="2600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Tpl/App/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="91" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.75714284" vertical-offset="248" max-vertical-offset="3562">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

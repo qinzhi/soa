@@ -11,7 +11,7 @@ namespace Admin\Controller;
 
 class AddressbookController extends AdminController {
 
-    private $dept,$position;
+    private $dept,$position,$rank,$member;
 
     public function __construct(){
         parent::__construct();

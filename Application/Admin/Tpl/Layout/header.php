@@ -24,8 +24,7 @@ Purchase: http://wrapbootstrap.com
     <link href="__CSS__/weather-icons.min.css" rel="stylesheet" />
 
     <!--Fonts-->
-    <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
-          rel="stylesheet" type="text/css">
+
 
     <!--Beyond styles-->
     <link id="beyond-link" href="__CSS__/beyond.min.css" rel="stylesheet" />

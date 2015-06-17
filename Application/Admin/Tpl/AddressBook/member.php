@@ -8,7 +8,24 @@
                         <div class="form-group">
                             <label for="exampleInputEmail2">&nbsp;部门:&nbsp;</label>
                             <select class="input-sm">
-                                <option>湖南实意网络科技有限公司</option>
+                                <?php $show_dept = function($depts,$count) use (&$show_dept){
+                                    if(!empty($depts) && is_array($depts)):
+                                        $black = '';
+                                        if($count > 1){
+                                            for($j=1;$j<$count;$j++){
+                                                $black .= '&nbsp;&nbsp;&nbsp;&nbsp;';
+                                            }
+                                        }
+                                        for($i=0,$len=count($depts);$i<$len;$i++):
+                                            echo '<option value="' . $depts[$i]['id'] . '">' . $black . $depts[$i]['name'] . '</option>';
+                                            if(!empty($depts[$i]['child'])):
+                                                $step = $count + 1;
+                                                $show_dept($depts[$i]['child'],$step);
+                                            endif;
+                                        endfor;
+                                    endif;
+                                };?>
+                                <?php $show_dept($depts,1);?>
                             </select>
                         </div>
                         <div class="form-group" style="margin-top: -4px;">
@@ -109,9 +126,9 @@
                                                                             <i class="fa fa-angle-right level' . $count . '"></i>
                                                                             <span>'.$depts[$i]['name'].'</span>
                                                                         </a>';
-                                                                    $count++;
                                                                     if(!empty($depts[$i]['child'])):
-                                                                        $show_dept($depts[$i]['child'],$count);
+                                                                        $step = $count + 1;
+                                                                        $show_dept($depts[$i]['child'],$step);
                                                                     endif;
                                                                     echo '</li>';
                                                                     if($i==$len-1):

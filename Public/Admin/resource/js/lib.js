@@ -24,3 +24,11 @@ function SetFileField( fileUrl , data )
         window.fun(fileUrl);
     }
 }
+
+$.extend({
+    panel : {
+        overlay : function(){
+
+        }
+    }
+});

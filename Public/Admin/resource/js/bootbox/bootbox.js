@@ -650,7 +650,7 @@
 
     dialog.on("shown.bs.modal", function() {
     if(options.events){
-        //options.events.show();
+        options.events.shown();
     }
       dialog.find(".btn-primary:first").focus();
     });
