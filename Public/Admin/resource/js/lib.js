@@ -1,12 +1,34 @@
-$(function(){
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+function BrowseServer(input_image,fun )
+{
+    var finder = new CKFinder();
+    finder.basePath = '../';
+    finder.selectActionFunction = SetFileField;
 
-    ga('create', 'UA-52103994-1', 'auto');
-    ga('send', 'pageview');
+    finder.selectActionData = input_image;
+    if($.isFunction(fun)){
+        window.fun = fun;
+    }
+    finder.popup();
+}
+function getCKeditorValue(id){
+    return CKEDITOR.instances[id].getData();
+}
+function SetFileField( fileUrl , data )
+{
+    split = '\/Attachments\/';
+    pic = fileUrl.split(split);
+    if(!!pic[1]){
+        document.getElementById( (data["selectActionData"] )).value = pic[1];
+    }
+    if($.isFunction(window.fun)){
+        window.fun(fileUrl);
+    }
+}
 
+$.extend({
+    panel : {
+        overlay : function(){
+
+        }
+    }
 });

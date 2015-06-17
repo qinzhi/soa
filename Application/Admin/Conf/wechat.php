@@ -27,7 +27,12 @@ return array(
         'delete_user'   =>  'https://qyapi.weixin.qq.com/cgi-bin/user/delete',  //删除成员
         'bat_delete_user'   =>  'https://qyapi.weixin.qq.com/cgi-bin/user/batchdelete', //批量删除成员
 
-
+        /**
+         * 企业号应用
+         */
+        'get_app' => 'https://qyapi.weixin.qq.com/cgi-bin/agent/get',
+        'set_app' => 'https://qyapi.weixin.qq.com/cgi-bin/agent/set',
+        'get_app_list' => 'https://qyapi.weixin.qq.com/cgi-bin/agent/list',
 
     ),
     //错误代码

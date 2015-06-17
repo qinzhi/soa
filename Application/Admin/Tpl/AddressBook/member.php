@@ -4,11 +4,28 @@
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px;">
                 <div class="widget-caption">
-                    <form class="form-inline" role="form">
+                    <form class="form-inline" role="form" autocomplete="off">
                         <div class="form-group">
                             <label for="exampleInputEmail2">&nbsp;部门:&nbsp;</label>
                             <select class="input-sm">
-                                <option>湖南实意网络科技有限公司</option>
+                                <?php $show_dept = function($depts,$count) use (&$show_dept){
+                                    if(!empty($depts) && is_array($depts)):
+                                        $black = '';
+                                        if($count > 1){
+                                            for($j=1;$j<$count;$j++){
+                                                $black .= '&nbsp;&nbsp;&nbsp;&nbsp;';
+                                            }
+                                        }
+                                        for($i=0,$len=count($depts);$i<$len;$i++):
+                                            echo '<option value="' . $depts[$i]['id'] . '">' . $black . $depts[$i]['name'] . '</option>';
+                                            if(!empty($depts[$i]['child'])):
+                                                $step = $count + 1;
+                                                $show_dept($depts[$i]['child'],$step);
+                                            endif;
+                                        endfor;
+                                    endif;
+                                };?>
+                                <?php $show_dept($depts,1);?>
                             </select>
                         </div>
                         <div class="form-group" style="margin-top: -4px;">
@@ -34,37 +51,35 @@
                             <table class="table table-bordered table-condensed table-hover table-focus">
                                 <thead>
                                 <tr>
-                                    <th width="10%">
+                                    <th width="25%">
                                         <div class="checkbox">
                                             <label>
-                                                <input class="colored-blue" type="checkbox"><span class="text"></span>
+                                                <input class="colored-blue" type="checkbox" autocomplete="off"><span class="text" style="font-weight: bold">编号</span>
                                             </label>
                                         </div>
                                     </th>
-                                    <th width="30%">
-                                        员工编号
-                                    </th>
-                                    <th width="30%">
+                                    <th width="50%">
                                         姓名
                                     </th>
-                                    <th width="30%">
+                                    <th width="25%">
                                         状态
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-node="1">
-                                        <th>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input class="colored-blue" type="checkbox"><span class="text"></span>
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    <volist name="members" id="vo">
+                                        <tr data-node="{$vo.id}">
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input class="colored-blue" type="checkbox" value="{$vo.id}"><span class="text">{$vo.id}</span>
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>{$vo.name}</td>
+                                            <td>{$vo['status'] == 1?'启用':'禁用'}</td>
+                                        </tr>
+                                    </volist>
                                 </tbody>
                             </table>
                         </div>
@@ -76,10 +91,13 @@
                                     <tbody>
                                         <tr>
                                             <th> 账号*  </th>
-                                            <td colspan="2"> <input class="form-control" type="text" readonly="readonly" msg="请输入账号" check="require" name="account"> </td>
-                                            <td class="col-20" rowspan="3">
-                                                <input type="hidden" name="avatar"/>
-                                                <img name="emp_pic" class="img-thumbnail col-12" src="__IMAGE__/avatars/adam-jansen.jpg">
+                                            <td colspan="2"> <input class="form-control" type="text" msg="请输入账号" check="require" name="account"> </td>
+                                            <td class="col-20" rowspan="3" style="text-align: center; vertical-align: middle;">
+                                                <input type="hidden" name="avatar" id="avatar"/>
+                                                <div class="avatar-area">
+                                                    <img class="avatar" src="__IMAGE__/avatars/adam-jansen.jpg">
+                                                    <span class="caption">上传图片</span>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -99,7 +117,6 @@
                                                         <div class="header bordered-sky" style="position: absolute;top: 0;">请选择部门</div>
                                                         <?php $show_dept = function($depts,$count) use (&$show_dept){
                                                             if(!empty($depts) && is_array($depts)):
-                                                                $count++;
                                                                 for($i=0,$len=count($depts);$i<$len;$i++):
                                                                     if($i==0):
                                                                         echo '<ul class="tree_menu">';
@@ -110,7 +127,8 @@
                                                                             <span>'.$depts[$i]['name'].'</span>
                                                                         </a>';
                                                                     if(!empty($depts[$i]['child'])):
-                                                                        $show_dept($depts[$i]['child'],$count);
+                                                                        $step = $count + 1;
+                                                                        $show_dept($depts[$i]['child'],$step);
                                                                     endif;
                                                                     echo '</li>';
                                                                     if($i==$len-1):
@@ -124,14 +142,14 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th> 性别 </th>
-                                            <td>
+                                            <th width="20%"> 性别 </th>
+                                            <td width="30%">
                                                 <select name="sex" class="form-control">
-                                                    <option value="0">男</option>
-                                                    <option value="1 ">女</option>
+                                                    <option value="1">男</option>
+                                                    <option value="2">女</option>
                                                 </select>
                                             </td>
-                                            <th> 生日 </th>
+                                            <th width="20%"> 生日 </th>
                                             <td>
                                                 <input name="birthday" class="form-control date-picker" type="text" data-date-format="yyyy-mm-dd" readonly>
                                             </td>
@@ -139,27 +157,28 @@
                                         <tr>
                                             <th> 职位* </th>
                                             <td>
+                                                <input type="hidden" name="position_id"/>
                                                 <select name="position" class="form-control">
-                                                    <option value="">选择部门级别</option>
+                                                    <option value="">选择职位</option>
                                                     <volist name="position" id="vo">
-                                                        <option value="{$vo.id}">{$vo.name}</option>
+                                                        <option value="{$vo.name}" data-node="{$vo.id}">{$vo.name}</option>
                                                     </volist>
                                                 </select>
                                             </td>
 
-                                            <th> 住址 </th>
-                                            <td>
-                                                <input name="site" class="form-control" type="text" msg="请输入住址">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th> 微信号* </th>
-                                            <td>
-                                                <input name="weixin" class="form-control" type="text" msg="请输入微信号">
-                                            </td>
                                             <th> QQ号 </th>
                                             <td>
                                                 <input name="qq" class="form-control" type="text" msg="请输入QQ号">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th> 住址 </th>
+                                            <td>
+                                                <input name="site" class="form-control" type="text">
+                                            </td>
+                                            <th> 微信号* </th>
+                                            <td>
+                                                <input name="weixinid" class="form-control" type="text" msg="请输入微信号">
                                             </td>
                                         </tr>
                                         <tr>
@@ -189,7 +208,7 @@
                                             <td colspan="3">
                                                 <select name="status">
                                                     <option value="1">启用</option>
-                                                    <option value="-1">禁用</option>
+                                                    <option value="0">禁用</option>
                                                 </select>
                                             </td>
                                         </tr>

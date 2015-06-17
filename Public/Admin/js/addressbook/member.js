@@ -7,17 +7,64 @@ $(function(){
         showData : function(value){
             member.id = value.id;
             var form = $('.plugins_member- form');
+            form.find('input[name=account]').val(value.account);
             form.find('input[name=name]').val(value.name);
+
+            form.find('input[name=dept_id]').val(value.dept_id);
+            var dept_name = $(form).find('a[data-node=' + value.dept_id + ']').find('span').text();
+            form.find('input[name=dept_name]').val(dept_name);
+
+            var index = form.find('select[name=sex]')
+                .find('option[value=' + value.sex + ']').index();
+            form.find('select[name=sex]').get(0).selectedIndex = index;
+
             var index = form.find('select[name=status]')
                 .find('option[value=' + value.status + ']').index();
             form.find('select[name=status]').get(0).selectedIndex = index;
-            form.find('select[name=status]')
-                .find('option[value=' + value.status + ']').attr('selected',true);
 
-            form.find('input[name=sort]').val(value.sort);
-            form.find('input[name=remark]').val(value.remark);
+            form.find('input[name=birthday]').val(value.birthday);
+            var index = form.find('select[name=position]')
+                .find('option[data-node=' + value.position_id + ']').index();
+            form.find('select[name=position]').get(0).selectedIndex = index;
+
+            form.find('input[name=qq]').val(value.qq);
+            form.find('input[name=site]').val(value.site);
+            form.find('input[name=weixinid]').val(value.weixinid);
+            form.find('input[name=mobile_tel]').val(value.mobile_tel);
+            form.find('input[name=office_tel]').val(value.office_tel);
+            form.find('input[name=email]').val(value.email);
+            form.find('input[name=duty]').val(value.duty);
+
+            var index = form.find('select[name=status]')
+                .find('option[value=' + value.status + ']').index();
+            form.find('select[name=status]').get(0).selectedIndex = index;
         }
     };
+    $(this).on('click','.tree_menu a',function(){
+        var node = $(this).data('node');
+        var name = $(this).find('span').text();
+        var dept_root   =   $(this).parents('.dept-root');
+        if(dept_root.length){
+            dept_root.hide();
+            dept_root.parent().find('input[name=dept_name]').val(name);
+            dept_root.parent().find('input[name=dept_id]').val(node);
+        }
+        return false;
+    });
+
+    $('select[name=position]').change(function(){
+        var id = $(this).find('option:selected').data('node');
+        $('input[name=position_id]').val(id);
+    });
+
+    $(this).on('click','.select-dept',function(){
+        var dept_root   =   $(this).parents('.input-group').find('.dept-root');
+        if(dept_root.is(':hidden')){
+            dept_root.slideDown();
+        }else{
+            dept_root.slideUp();
+        }
+    });
 
     $(this).on('click','.select-dept',function(){
         var dept_root   =   $(this).parents('.input-group').find('.dept-root');
@@ -34,6 +81,8 @@ $(function(){
                 var form = $('#addModal .col-md-12 .form-member');
                 if(form.html() == ''){
                     form.append($('form.form-member').html());
+                    $(form).find('select[name=status]').attr('disabled','disabled');
+                    $('input[name=position_id]').val('');
                     form.append('<input name="type" value="add" type="hidden"/>');
                 }
                 else{form[0].reset();}
@@ -41,10 +90,11 @@ $(function(){
                 //$('.modal-dialog').css('width','650px !important');
                 return $("#addModal").html();
             },
-            title: "添加级别",
+            title: "添加会员",
             events: {
-                show : function(){
-                    $('.modal-dialog').css('width','650px');
+                shown : function(){
+                    $('.bootbox .date-picker').datepicker();
+                    //$('.modal-dialog').css('width','650px');
                 }
             },
             className: "modal-darkorange",
@@ -109,20 +159,24 @@ $(function(){
 
     });
 
-
-    $('.table-focus tbody tr').click(function(){
+    $('.table-focus tbody tr td').click(function(){
         if(!$(this).hasClass('tr-focus')){
             $(this).parent().find('.tr-focus').removeClass('tr-focus');
             $(this).addClass('tr-focus');
-            member.id = $(this).data('node');
+            member.id = $(this).parent().data('node');
             set_loading('show');
             $.post('/addressbook/get_member',{id:member.id},function(value){
                 if(value != ''){
                     value = eval('(' + value + ')');
                     member.showData(value);
-                    set_loading('hide');
                 }
+                set_loading('hide');
             });
         }
+    });
+    $(this).on('click','.avatar-area .caption',function(){
+        BrowseServer('avatar',function(fileUrl){
+            $('img.avatar').attr('src',fileUrl);
+        });
     });
 });

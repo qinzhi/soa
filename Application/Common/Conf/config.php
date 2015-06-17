@@ -1,6 +1,8 @@
 <?php
 return array(
 
+    "LOAD_EXT_FILE"=>"fb",
+
     'LOAD_EXT_CONFIG'	=>'db,db_status,wechat',
 
     'TMPL_TEMPLATE_SUFFIX'=>'.php', //模板文件的后缀

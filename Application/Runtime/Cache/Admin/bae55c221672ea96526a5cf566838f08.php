@@ -24,8 +24,7 @@ Purchase: http://wrapbootstrap.com
     <link href="/Public/Admin/resource/css/weather-icons.min.css" rel="stylesheet" />
 
     <!--Fonts-->
-    <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300"
-          rel="stylesheet" type="text/css">
+
 
     <!--Beyond styles-->
     <link id="beyond-link" href="/Public/Admin/resource/css/beyond.min.css" rel="stylesheet" />
@@ -33,7 +32,9 @@ Purchase: http://wrapbootstrap.com
     <link href="/Public/Admin/resource/css/typicons.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/animate.min.css" rel="stylesheet" />
     <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 
+    <script src="/Public/Admin/resource/js/lib.js"></script>
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="/Public/Admin/resource/js/skins.min.js"></script>
 </head>
@@ -424,137 +425,48 @@ Purchase: http://wrapbootstrap.com
             <span class="menu-text"> 首页 </span>
         </a>
     </li>
-    <!--通讯录-->
-    <li class="active open">
-        <a href="#" class="menu-dropdown">
-            <i class="menu-icon fa fa-group"></i>
-            <span class="menu-text"> 通讯录 </span>
-            <i class="menu-expand"></i>
-        </a>
-        <ul class="submenu">
-            <li class="active">
-                <a href="/addressbook/organ">
-                    <span class="menu-text">组织图</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/position">
-                    <span class="menu-text">职位</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/rank">
-                    <span class="menu-text">部门级别</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/member">
-                    <span class="menu-text">员工登记</span>
-                </a>
-            </li>
-        </ul>
-    </li>
 
     <!--UI Elements-->
-    <li>
+    <li class="open active">
         <a href="#" class="menu-dropdown">
             <i class="menu-icon fa fa-desktop"></i>
-            <span class="menu-text"> Elements </span>
+            <span class="menu-text"> 系统设置 </span>
 
             <i class="menu-expand"></i>
         </a>
 
         <ul class="submenu">
-            <li>
-                <a href="elements.html">
-                    <span class="menu-text">Basic Elements</span>
-                </a>
-            </li>
-            <li>
+            <li class="open active">
                 <a href="#" class="menu-dropdown">
-                                    <span class="menu-text">
-                                        Icons
-                                    </span>
+                    <span class="menu-text"> 通讯录 </span>
                     <i class="menu-expand"></i>
                 </a>
-
                 <ul class="submenu">
-                    <li>
-                        <a href="font-awesome.html">
-                            <i class="menu-icon fa fa-rocket"></i>
-                            <span class="menu-text">Font Awesome</span>
+                    <li class="active">
+                        <a href="/addressbook/organ">
+                            <span class="menu-text">组织图</span>
                         </a>
                     </li>
                     <li>
-                        <a href="glyph-icons.html">
-                            <i class="menu-icon glyphicon glyphicon-stats"></i>
-                            <span class="menu-text">Glyph Icons</span>
+                        <a href="/addressbook/position">
+                            <span class="menu-text">职位</span>
                         </a>
                     </li>
                     <li>
-                        <a href="typicon.html">
-                            <i class="menu-icon typcn typcn-location-outline"></i>
-                            <span class="menu-text"> Typicons</span>
+                        <a href="/addressbook/rank">
+                            <span class="menu-text">部门级别</span>
                         </a>
                     </li>
                     <li>
-                        <a href="weather-icons.html">
-                            <i class="menu-icon wi-day-snow"></i>
-                            <span class="menu-text">Weather Icons</span>
+                        <a href="/addressbook/member">
+                            <span class="menu-text">员工登记</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="tabs.html">
-                    <span class="menu-text">Tabs & Accordions</span>
-                </a>
-            </li>
-            <li>
-                <a href="alerts.html">
-                    <span class="menu-text">Alerts & Tooltips</span>
-                </a>
-            </li>
-            <li>
-                <a href="modals.html">
-                    <span class="menu-text">Modals & Wells</span>
-                </a>
-            </li>
-            <li>
-                <a href="buttons.html">
-                    <span class="menu-text">Buttons</span>
-                </a>
-            </li>
-            <li>
-                <a href="nestable-list.html">
-                    <span class="menu-text"> Nestable List</span>
-                </a>
-            </li>
-            <li>
-                <a href="treeview.html">
-                    <span class="menu-text">Treeview</span>
-                </a>
-            </li>
-        </ul>
-    </li>
-    <!--Tables-->
-    <li>
-        <a href="#" class="menu-dropdown">
-            <i class="menu-icon fa fa-table"></i>
-            <span class="menu-text"> Tables </span>
-
-            <i class="menu-expand"></i>
-        </a>
-
-        <ul class="submenu">
-            <li>
-                <a href="tables-simple.html">
-                    <span class="menu-text">Simple & Responsive</span>
-                </a>
-            </li>
-            <li>
-                <a href="tables-data.html">
-                    <span class="menu-text">Data Tables</span>
+                <a href="/app">
+                    <span class="menu-text"> 应用中心 </span>
                 </a>
             </li>
         </ul>
@@ -614,11 +526,12 @@ Purchase: http://wrapbootstrap.com
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px;">
                 <div class="widget-caption">
-                    <form class="form-inline" role="form">
+                    <form class="form-inline" role="form" autocomplete="off">
                         <div class="form-group">
                             <label for="exampleInputEmail2">&nbsp;部门:&nbsp;</label>
                             <select class="input-sm">
-                                <option>湖南实意网络科技有限公司</option>
+                                <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $black = ''; if($count > 1){ for($j=1;$j<$count;$j++){ $black .= '&nbsp;&nbsp;&nbsp;&nbsp;'; } } for($i=0,$len=count($depts);$i<$len;$i++): echo '<option value="' . $depts[$i]['id'] . '">' . $black . $depts[$i]['name'] . '</option>'; if(!empty($depts[$i]['child'])): $step = $count + 1; $show_dept($depts[$i]['child'],$step); endif; endfor; endif; };?>
+                                <?php $show_dept($depts,1);?>
                             </select>
                         </div>
                         <div class="form-group" style="margin-top: -4px;">
@@ -644,37 +557,33 @@ Purchase: http://wrapbootstrap.com
                             <table class="table table-bordered table-condensed table-hover table-focus">
                                 <thead>
                                 <tr>
-                                    <th width="10%">
+                                    <th width="25%">
                                         <div class="checkbox">
                                             <label>
-                                                <input class="colored-blue" type="checkbox"><span class="text"></span>
+                                                <input class="colored-blue" type="checkbox" autocomplete="off"><span class="text" style="font-weight: bold">编号</span>
                                             </label>
                                         </div>
                                     </th>
-                                    <th width="30%">
-                                        员工编号
-                                    </th>
-                                    <th width="30%">
+                                    <th width="50%">
                                         姓名
                                     </th>
-                                    <th width="30%">
+                                    <th width="25%">
                                         状态
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-node="1">
-                                        <th>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input class="colored-blue" type="checkbox"><span class="text"></span>
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    <?php if(is_array($members)): $i = 0; $__LIST__ = $members;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr data-node="<?php echo ($vo["id"]); ?>">
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input class="colored-blue" type="checkbox" value="<?php echo ($vo["id"]); ?>"><span class="text"><?php echo ($vo["id"]); ?></span>
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td><?php echo ($vo["name"]); ?></td>
+                                            <td><?php echo ($vo['status'] == 1?'启用':'禁用'); ?></td>
+                                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -686,10 +595,13 @@ Purchase: http://wrapbootstrap.com
                                     <tbody>
                                         <tr>
                                             <th> 账号*  </th>
-                                            <td colspan="2"> <input class="form-control" type="text" readonly="readonly" msg="请输入账号" check="require" name="account"> </td>
-                                            <td class="col-20" rowspan="3">
-                                                <input type="hidden" name="avatar"/>
-                                                <img name="emp_pic" class="img-thumbnail col-12" src="/Public/Admin/resource/img/avatars/adam-jansen.jpg">
+                                            <td colspan="2"> <input class="form-control" type="text" msg="请输入账号" check="require" name="account"> </td>
+                                            <td class="col-20" rowspan="3" style="text-align: center; vertical-align: middle;">
+                                                <input type="hidden" name="avatar" id="avatar"/>
+                                                <div class="avatar-area">
+                                                    <img class="avatar" src="/Public/Admin/resource/img/avatars/adam-jansen.jpg">
+                                                    <span class="caption">上传图片</span>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -707,24 +619,29 @@ Purchase: http://wrapbootstrap.com
                                                     </span>
                                                     <div class="dept-root well with-header">
                                                         <div class="header bordered-sky" style="position: absolute;top: 0;">请选择部门</div>
-                                                        <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $count++; for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
+                                                        <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
                                                                         <a data-node="'.$depts[$i]['id'].'">
                                                                             <i class="fa fa-angle-right level' . $count . '"></i>
                                                                             <span>'.$depts[$i]['name'].'</span>
-                                                                        </a>'; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
+                                                                        </a>'; if(!empty($depts[$i]['child'])): $step = $count + 1; $show_dept($depts[$i]['child'],$step); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th> 性别 </th>
-                                            <td>
+                                            <th width="20%"> 性别 </th>
+                                            <td width="30%">
                                                 <select name="sex" class="form-control">
+<<<<<<< HEAD
                                                     <option value="0">男</option>
                                                     <option value="1 ">女</option>
+=======
+                                                    <option value="1">男</option>
+                                                    <option value="2">女</option>
+>>>>>>> 3c92f90827a640b7f467f17d0deb1334be1e8ccd
                                                 </select>
                                             </td>
-                                            <th> 生日 </th>
+                                            <th width="20%"> 生日 </th>
                                             <td>
                                                 <input name="birthday" class="form-control date-picker" type="text" data-date-format="yyyy-mm-dd" readonly>
                                             </td>
@@ -732,25 +649,26 @@ Purchase: http://wrapbootstrap.com
                                         <tr>
                                             <th> 职位* </th>
                                             <td>
+                                                <input type="hidden" name="position_id"/>
                                                 <select name="position" class="form-control">
-                                                    <option value="">选择部门级别</option>
-                                                    <?php if(is_array($position)): $i = 0; $__LIST__ = $position;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                                    <option value="">选择职位</option>
+                                                    <?php if(is_array($position)): $i = 0; $__LIST__ = $position;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["name"]); ?>" data-node="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                                 </select>
                                             </td>
 
-                                            <th> 住址 </th>
-                                            <td>
-                                                <input name="site" class="form-control" type="text" msg="请输入住址">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th> 微信号* </th>
-                                            <td>
-                                                <input name="weixin" class="form-control" type="text" msg="请输入微信号">
-                                            </td>
                                             <th> QQ号 </th>
                                             <td>
                                                 <input name="qq" class="form-control" type="text" msg="请输入QQ号">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th> 住址 </th>
+                                            <td>
+                                                <input name="site" class="form-control" type="text">
+                                            </td>
+                                            <th> 微信号* </th>
+                                            <td>
+                                                <input name="weixinid" class="form-control" type="text" msg="请输入微信号">
                                             </td>
                                         </tr>
                                         <tr>
@@ -780,7 +698,7 @@ Purchase: http://wrapbootstrap.com
                                             <td colspan="3">
                                                 <select name="status">
                                                     <option value="1">启用</option>
-                                                    <option value="-1">禁用</option>
+                                                    <option value="0">禁用</option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -823,15 +741,14 @@ Purchase: http://wrapbootstrap.com
 <!-- Main Container -->
 
 <!--Basic Scripts-->
-<script src="/Public/Admin/resource/js/jquery-2.0.3.min.js"></script>
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
 <script src="/Public/Admin/resource/js/datetime/bootstrap-datepicker.js"></script>
 <script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
 <script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
-
+<script src="/Public/Admin/CKeditor/ckeditor.js"></script>
+<script src="/Public/Admin/CKfinder/ckfinder.js"></script>
 <!--Beyond Scripts-->
 <script src="/Public/Admin/resource/js/beyond.min.js"></script>
-<script src="/Public/Admin/resource/js/lib.js"></script>
 
 <?php
  $src = array_shift(C('TMPL_PARSE_STRING')) . '/JS' . $_SERVER["REQUEST_URI"]; if(is_file(PROJECT_PATH . $src . '.js')){ echo '<script src="' . $src . '.js"></script>'; } ?>
