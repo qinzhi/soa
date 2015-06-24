@@ -632,13 +632,8 @@ Purchase: http://wrapbootstrap.com
                                             <th width="20%"> 性别 </th>
                                             <td width="30%">
                                                 <select name="sex" class="form-control">
-<<<<<<< HEAD
-                                                    <option value="0">男</option>
-                                                    <option value="1 ">女</option>
-=======
                                                     <option value="1">男</option>
                                                     <option value="2">女</option>
->>>>>>> 3c92f90827a640b7f467f17d0deb1334be1e8ccd
                                                 </select>
                                             </td>
                                             <th width="20%"> 生日 </th>

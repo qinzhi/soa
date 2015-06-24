@@ -16,8 +16,8 @@ return array(
     ),
 
     'WEIXIN' => array(
-        'CorpID'    =>  'wx755896948c0fb82d'
-        ,'Secret'   =>  '_coTBTWxo6RiJ04UE3pMnUvmLzeBpSJlVo9ffzK3K092X-8REVUnFFJcf8zQkn40'
+        'CorpID'    =>  'wxd6b85e3d79152555'
+        ,'Secret'   =>  'x-8vB7TMz2kUhsiRZeb53U9Rn8trIR6gYNqjjc7fTu0ZJr_0a4pNScvUgnH5GOn8'
     ),
     //模板布局
     //'LAYOUT_ON'=>true,
