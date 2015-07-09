@@ -182,16 +182,13 @@
                                     </table>
                                     <div class="row DTTTFooter">
                                         <div class="col-sm-6">
-                                            <div class="dataTables_info" id="expandabledatatable_info" role="alert" aria-live="polite" aria-relevant="all">Showing 1 to 5 of 6 entries</div>
+                                            <div class="dataTables_info" id="expandabledatatable_info">
+                                                总共:  <span style="margin-left: 5px;">{$total}</span>人
+                                            </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="dataTables_paginate paging_bootstrap" id="expandabledatatable_paginate">
-                                                <ul class="pagination">
-                                                    <li class="prev disabled"><a href="#">Prev</a></li>
-                                                    <li class="active"><a href="#">1</a></li>
-                                                    <li><a href="#">2</a></li>
-                                                    <li class="next"><a href="#">Next</a></li>
-                                                </ul>
+                                                <?php page('/member',$page_num,$page);?>
                                             </div>
                                         </div>
                                     </div>

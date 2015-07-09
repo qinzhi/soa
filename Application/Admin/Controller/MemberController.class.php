@@ -29,6 +29,8 @@ class MemberController extends AdminController {
         $total = $this->member->get_total();
         $page_num = ceil( $total / $limit );
         $members = $this->member->get_members($offset,$limit);
+        $this->assign('total',$total);
+        $this->assign('page',$page);
         $this->assign('page_num',$page_num);
         $this->assign('members',$members);
         $this->assign('depts',$this->dept->get_depts());

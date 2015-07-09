@@ -7990,3 +7990,9 @@ INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
 [ 2015-07-09T18:50:01+08:00 ] 127.0.0.1 /member?cid=1
 ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'soa.dept' doesn't exist
 
+[ 2015-07-09T22:59:52+08:00 ] 127.0.0.1 /
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 La table 'soa.soa_map' n'existe pas
+
+[ 2015-07-09T23:00:54+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+

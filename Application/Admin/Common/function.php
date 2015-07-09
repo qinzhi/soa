@@ -30,6 +30,67 @@ if(!function_exists('create_editor')){
     }
 }
 
+function page($base_url,$page_num,$cur_page,$params = array(),$cell = 3){
+    if($page_num <= 1){
+        return;
+    }
+    $start = ($cur_page > $cell) ? $cur_page - $cell : 1;
+    $end = ($cur_page + $cell > $page_num) ? $page_num : $cur_page + $cell;
+    if(!empty($params)){
+        if(is_array($params)){
+            $params = http_build_query($params);
+        }
+        $strData = "<ul class='pagination'>";
+        if($cur_page <= 1){
+            $strData .= "<li class='home disabled'><a href='javascript:;'>首页</a></li>";
+            $strData .= "<li class='prev disabled'><a href='javascript:;'>上一页</a></li>";
+        }else{
+            $strData .= "<li class='home'><a href='"  . $base_url . "?page=1&" . $params . "'>首页</a></li>";
+            $strData .= "<a href=" . $base_url . "?page=" .  ( $cur_page-1 ) . "&" . $params . ">下一页</a>&nbsp;&nbsp;";
+        }
+        // 2 步 打印页码
+        for($i = $start; $i <= $end; $i ++) {
+            if ($i == $cur_page) {
+                $strData .= "<li class='active'><a href='#'>" . $i . "</a></li>";
+            } else {
+                $strData .= "<li><a href='" . $base_url . "?page=" . $i . "&" . $params . "'>" . $i . "</a></li>";
+            }
+        }
+        if ($cur_page < $page_num) {
+            $strData .= "<li class='next'><a href='" . $base_url . "?page=" . ( $cur_page+1 ) . "&" . $params . "'>下一页</a></li>";
+            $strData .= "<li class='end'><a href='" . $base_url . "?page=" . $page_num . "&" . $params . "'>尾页</a></li>";
+        }else{
+            $strData .= "<li class='next disabled'><a href='javascript:;'>下一页</a></li>";
+            $strData .= "<li class='end disabled'><a href='javascript:;'>尾页</a></li>";
+        }
+    }else{
+        $strData = "<ul class='pagination'>";
+        if($cur_page <= 1){
+            $strData .= "<li class='home disabled'><a href='javascript:;'>首页</a></li>";
+            $strData .= "<li class='prev disabled'><a href='javascript:;'>上一页</a></li>";
+        }else{
+            $strData .= "<li class='home'><a href='" .$base_url. "?page=1'>首页</a></li>";
+            $strData .= "<a href='" . $base_url . "?page=" .  ( $cur_page-1 ) . "'>下一页</a>&nbsp;&nbsp;";
+        }
+        // 2 步 打印页码
+        for($i = $start; $i <= $end; $i ++) {
+            if ($i == $cur_page) {
+                $strData .= "<li class='active'><a href='#'>" . $i . "</a></li>";
+            } else {
+                $strData .= "<li><a href='" . $base_url . "?page=" . $i . "'>" . $i . "</a></li>";
+            }
+        }
+        if ($cur_page < $page_num) {
+            $strData .= "<li class='next'><a href='" . $base_url . "?page=" . ( $cur_page+1 ) . "'>下一页</a></li>";
+            $strData .= "<li class='end'><a href='" . $base_url . "?page=" . $page_num . "'>尾页</a></li>";
+        }else{
+            $strData .= "<li class='next disabled'><a href='javascript:;'>下一页</a></li>";
+            $strData .= "<li class='end disabled'><a href='javascript:;'>尾页</a></li>";
+        }
+    }
+    echo $strData.'</ul>';
+}
+
 function get_letter($string) {
     $charlist = mb_str_split($string);
     return implode(array_map("get_first_char", $charlist));
