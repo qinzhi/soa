@@ -9,7 +9,7 @@ var InitiateSimpleDataTable = function () {
                     "aButtons": [
                         "copy", "csv", "xls", "pdf", "print"
                     ],
-                    "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": "/Public/Admin/resource/js/datatable/assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
                     "search": "",

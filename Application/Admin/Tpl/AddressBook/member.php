@@ -7,7 +7,7 @@
                     <form class="form-inline" role="form" autocomplete="off">
                         <div class="form-group">
                             <label for="exampleInputEmail2">&nbsp;部门:&nbsp;</label>
-                            <select class="input-sm">
+                            <select class="input-sm" style="height: 33px;min-width: 200px;">
                                 <?php $show_dept = function($depts,$count) use (&$show_dept){
                                     if(!empty($depts) && is_array($depts)):
                                         $black = '';

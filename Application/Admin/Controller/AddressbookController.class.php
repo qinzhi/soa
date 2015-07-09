@@ -96,7 +96,6 @@ class AddressbookController extends AdminController {
         }else{
             echo DB_EXEC_EDIT_FAIL;
         }
-
     }
 
     public function del_dept(){
@@ -239,7 +238,7 @@ class AddressbookController extends AdminController {
         $data = array(
             'userid' => $params['account'],
             'name' => $params['name'],
-            'department' => 2,//$params['dept_id'],
+            'department' => $params['dept_id'],//$params['dept_id'],
             'mobile' => $params['mobile_tel'],
             'position' => $params['position'],
             'gender' => $params['sex'],
@@ -252,7 +251,8 @@ class AddressbookController extends AdminController {
             $this->member->name = $params['name'];
             $this->member->account = $params['account'];
             $this->member->dept_id  =$params['dept_id'];
-            $this->member->position_id = $params['position'];
+            $this->member->position_id = $params['position_id'];
+            $this->member->position_str = $params['position'];
             $this->member->letter = get_letter($this->member->name);
             $this->member->avatar = $params['avatar'];
             $this->member->email = $params['email'];
@@ -297,6 +297,7 @@ class AddressbookController extends AdminController {
                 $this->member->account = $account;
                 $this->member->dept_id  = $dept_id;
                 $this->member->position_id = $position_id;
+                $this->member->position_str= $position;
                 $this->member->letter = get_letter($this->member->name);
                 $this->member->avatar = $avatar;
                 $this->member->email = $email;

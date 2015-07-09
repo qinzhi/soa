@@ -16,7 +16,7 @@
     <link href="/Public/Admin/resource/css/font-awesome.min.css" rel="stylesheet" />
 
     <!--Beyond styles-->
-    <link href="/Public/Admin/resource/css/soa.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/demo.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/login.css" rel="stylesheet" />
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="/Public/Admin/resource/js/skins.min.js"></script>

@@ -18,10 +18,9 @@ class AppController extends AdminController {
     public function index(){
         $lists = $this->_wechat->get_app_list();
         if($lists->errcode == 0){
-            $lists = $lists->agentlist;
+            $list = $lists->agentlist;
         }
-        fb(json_decode(json_encode($lists),true));
-        $this->assign('lists',json_decode(json_encode($lists),true));
+        $this->assign('lists',json_decode(json_encode($list),true));
         $this->display();
     }
 

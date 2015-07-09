@@ -4,9 +4,12 @@
             <i class="fa fa-home"></i>
             <a href="/">首页</a>
         </li>
-        <li>
-            <a href="#">通讯录</a>
-        </li>
-        <li class="active">组织图</li>
+        <?php for($i=0,$len=count($breadcrumbs);$i<$len;$i++){
+            if($i<$len-1){
+                echo '<li><a href="#">' . $breadcrumbs[$i]['name'] . '</a></li>';
+            }else{
+                echo '<li class="active">' . $breadcrumbs[$i]['name'] . '</li>';
+            }
+        }?>
     </ul>
 </div>

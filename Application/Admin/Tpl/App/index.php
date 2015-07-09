@@ -5,7 +5,7 @@
             <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px">
                 <div class="input-group col-xs-2">
                     <span class="input-group-addon">状态</span>
-                    <select style="width: 200px">
+                    <select style="width: 100%;">
                         <option>请选择状态</option>
                         <option>启用</option>
                         <option>禁用</option>

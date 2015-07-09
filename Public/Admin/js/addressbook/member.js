@@ -66,15 +66,6 @@ $(function(){
         }
     });
 
-    $(this).on('click','.select-dept',function(){
-        var dept_root   =   $(this).parents('.input-group').find('.dept-root');
-        if(dept_root.is(':hidden')){
-            dept_root.slideDown();
-        }else{
-            dept_root.slideUp();
-        }
-    });
-
     $("#add_member").on('click', function () {
         bootbox.dialog({
             message: function(){

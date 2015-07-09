@@ -28,6 +28,7 @@ Purchase: http://wrapbootstrap.com
 
     <!--Beyond styles-->
     <link id="beyond-link" href="/Public/Admin/resource/css/beyond.min.css" rel="stylesheet" />
+    <link href="/Public/Admin/resource/css/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/soa.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/typicons.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/animate.min.css" rel="stylesheet" />
@@ -412,66 +413,21 @@ Purchase: http://wrapbootstrap.com
             <div class="sidebar-header-wrapper">
                 <input type="text" class="searchinput" />
                 <i class="searchicon fa fa-search"></i>
-                <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+                <div class="searchhelper">关键字搜索</div>
             </div>
             <!-- /Page Sidebar Header -->
 
             <!-- Sidebar Menu -->
             <ul class="nav sidebar-menu">
-    <!--首页-->
-    <li>
-        <a href="index.html">
-            <i class="menu-icon glyphicon glyphicon-home"></i>
-            <span class="menu-text"> 首页 </span>
-        </a>
-    </li>
-
-    <!--UI Elements-->
-    <li class="open active">
-        <a href="#" class="menu-dropdown">
-            <i class="menu-icon fa fa-desktop"></i>
-            <span class="menu-text"> 系统设置 </span>
-
-            <i class="menu-expand"></i>
-        </a>
-
-        <ul class="submenu">
-            <li class="open active">
-                <a href="#" class="menu-dropdown">
-                    <span class="menu-text"> 通讯录 </span>
-                    <i class="menu-expand"></i>
-                </a>
-                <ul class="submenu">
-                    <li class="active">
-                        <a href="/addressbook/organ">
-                            <span class="menu-text">组织图</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/addressbook/position">
-                            <span class="menu-text">职位</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/addressbook/rank">
-                            <span class="menu-text">部门级别</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/addressbook/member">
-                            <span class="menu-text">员工登记</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="/app">
-                    <span class="menu-text"> 应用中心 </span>
-                </a>
-            </li>
-        </ul>
-    </li>
-
+    <?php $show_slide = function($slideBar,$breadcrumbs,$count) use (&$show_slide){ if(!empty($slideBar) && is_array($slideBar)): if(!empty($breadcrumbs[$count])){ $id = $breadcrumbs[$count]['id']; } ++$count; for($i=0,$len=count($slideBar);$i<$len;$i++): if($i==0 && $count >= 2): echo '<ul class="submenu">'; endif; $active = ''; if(isset($id) && $slideBar[$i]['id'] == $id){ if($count < count($breadcrumbs)){ $active = 'class="active open"'; }else{ $active = 'class="active"'; } } $icon = ''; if(!empty($slideBar[$i]['icon'])){ $icon = '<i class="menu-icon fa ' . $slideBar[$i]['icon'] . ' level' . $count . '"></i>'; } $site = 'javascript:;'; if(!empty($slideBar[$i]['site'])){ $site = '/' . trim($slideBar[$i]['site'] , '/'); } if(!empty($slideBar[$i]['child'])): echo '<li ' . $active . '>
+                        <a href="' . $site . '" class="menu-dropdown" data-node="'.$slideBar[$i]['id'].'">
+                            ' . $icon . '
+                            <span class="menu-text">'.$slideBar[$i]['name'].'</span>
+                            <i class="menu-expand"></i></a>'; $show_slide($slideBar[$i]['child'],$breadcrumbs,$count); echo '</li>'; else: echo '<li ' . $active . '>
+                        <a href="' . $site . '" data-node="'.$slideBar[$i]['id'].'">
+                            ' . $icon . '
+                            <span class="menu-text">'.$slideBar[$i]['name'].'</span>
+                            </a></li>'; endif; if($i==$len-1 && $count >= 2): echo '</ul>'; endif; endfor; endif; };$show_slide($slideBar,$breadcrumbs,0);?>
 </ul>
 
             <!-- /Sidebar Menu -->
@@ -487,10 +443,7 @@ Purchase: http://wrapbootstrap.com
             <i class="fa fa-home"></i>
             <a href="/">首页</a>
         </li>
-        <li>
-            <a href="#">通讯录</a>
-        </li>
-        <li class="active">组织图</li>
+        <?php for($i=0,$len=count($breadcrumbs);$i<$len;$i++){ if($i<$len-1){ echo '<li><a href="#">' . $breadcrumbs[$i]['name'] . '</a></li>'; }else{ echo '<li class="active">' . $breadcrumbs[$i]['name'] . '</li>'; } }?>
     </ul>
 </div>
             <!-- /Page Breadcrumb -->
@@ -499,7 +452,7 @@ Purchase: http://wrapbootstrap.com
             <div class="page-header position-relative">
                 <div class="header-title">
                     <h1>
-                        组织图
+                        <?php if(!empty($breadcrumbs)){echo $breadcrumbs[count($breadcrumbs)-1]['name'];}else{echo '首页';}?>
                     </h1>
                 </div>
                 <!--Header Buttons-->
@@ -534,11 +487,11 @@ Purchase: http://wrapbootstrap.com
                 <div class="row">
                     <div class="col-xs-6 col-md-4 tissue_tree">
                         <div class="well">
-                            <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
+                            <?php $show_dept = function($depts,$count) use (&$show_dept){ if(!empty($depts) && is_array($depts)): $count++; for($i=0,$len=count($depts);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
                                             <a data-node="'.$depts[$i]['id'].'">
                                                 <i class="fa fa-angle-right level' . $count . '"></i>
                                                 <span>'.$depts[$i]['name'].'</span>
-                                            </a>'; $count++; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,1);?>
+                                            </a>'; if(!empty($depts[$i]['child'])): $show_dept($depts[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_dept($depts,0);?>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">
@@ -570,11 +523,6 @@ Purchase: http://wrapbootstrap.com
                                             </span>
                                             <div class="dept-root well with-header">
                                                 <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级部门</div>
-                                                <ul class="tree_menu">
-                                                    <!--<li>
-                                                        <a data-node="0"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
-                                                    </li>-->
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -653,7 +601,7 @@ Purchase: http://wrapbootstrap.com
 <script src="/Public/Admin/resource/js/beyond.min.js"></script>
 
 <?php
- $src = array_shift(C('TMPL_PARSE_STRING')) . '/JS' . $_SERVER["REQUEST_URI"]; if(is_file(PROJECT_PATH . $src . '.js')){ echo '<script src="' . $src . '.js"></script>'; } ?>
+ $script = explode('/',trim($_SERVER['PATH_INFO'],'/')); if(count($script) === 1){ array_push($script,'index'); } $src = array_shift(C('TMPL_PARSE_STRING')) . '/JS' . '/' . implode('/',$script); if(is_file(PROJECT_PATH . $src . '.js')){ echo '<script src="' . $src . '.js"></script>'; } ?>
 
 </body>
 <!--  /Body -->

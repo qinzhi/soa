@@ -28,6 +28,7 @@ Purchase: http://wrapbootstrap.com
 
     <!--Beyond styles-->
     <link id="beyond-link" href="__CSS__/beyond.min.css" rel="stylesheet" />
+    <link href="__CSS__/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="__CSS__/soa.min.css" rel="stylesheet" />
     <link href="__CSS__/typicons.min.css" rel="stylesheet" />
     <link href="__CSS__/animate.min.css" rel="stylesheet" />

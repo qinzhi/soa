@@ -425,39 +425,6 @@ Purchase: http://wrapbootstrap.com
             <span class="menu-text"> 首页 </span>
         </a>
     </li>
-<<<<<<< HEAD
-    <!--通讯录-->
-    <li class="active open">
-        <a href="#" class="menu-dropdown">
-            <i class="menu-icon fa fa-group"></i>
-            <span class="menu-text"> 通讯录 </span>
-            <i class="menu-expand"></i>
-        </a>
-        <ul class="submenu">
-            <li class="active">
-                <a href="/addressbook/organ">
-                    <span class="menu-text">组织图</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/position">
-                    <span class="menu-text">职位</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/rank">
-                    <span class="menu-text">部门级别</span>
-                </a>
-            </li>
-            <li>
-                <a href="/addressbook/member">
-                    <span class="menu-text">员工登记</span>
-                </a>
-            </li>
-        </ul>
-    </li>
-=======
->>>>>>> 3c92f90827a640b7f467f17d0deb1334be1e8ccd
 
     <!--UI Elements-->
     <li class="open active">
@@ -496,6 +463,11 @@ Purchase: http://wrapbootstrap.com
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="/app">
+                    <span class="menu-text"> 应用中心 </span>
+                </a>
             </li>
         </ul>
     </li>

@@ -9,7 +9,7 @@
             <div class="sidebar-header-wrapper">
                 <input type="text" class="searchinput" />
                 <i class="searchicon fa fa-search"></i>
-                <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+                <div class="searchhelper">关键字搜索</div>
             </div>
             <!-- /Page Sidebar Header -->
 
@@ -30,7 +30,7 @@
             <div class="page-header position-relative">
                 <div class="header-title">
                     <h1>
-                        组织图
+                        <?php if(!empty($breadcrumbs)){echo $breadcrumbs[count($breadcrumbs)-1]['name'];}else{echo '首页';}?>
                     </h1>
                 </div>
                 <!--Header Buttons-->

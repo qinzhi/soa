@@ -15,14 +15,10 @@ class PublicController extends AdminController {
     }
 
     public function index(){
-        header('Location: /login');
+        $this->display('login');
     }
 
     public function login(){
-        $this->display();
-    }
-
-    public function black(){
         $this->display();
     }
 

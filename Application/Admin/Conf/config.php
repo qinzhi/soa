@@ -19,6 +19,13 @@ return array(
         'CorpID'    =>  'wxd6b85e3d79152555'
         ,'Secret'   =>  'x-8vB7TMz2kUhsiRZeb53U9Rn8trIR6gYNqjjc7fTu0ZJr_0a4pNScvUgnH5GOn8'
     ),
+
+    'URL_ROUTER_ON'   => true,
+    'URL_ROUTE_RULES'=>array(
+        'login' => 'public/login',
+        'news/:id'               => 'News/read',
+        'news/read/:id'          => '/news/:1',
+    ),
     //模板布局
     //'LAYOUT_ON'=>true,
     //'LAYOUT_NAME'=>'layout',

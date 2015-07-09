@@ -38,8 +38,8 @@ class WeChatApi extends Model{
     protected $url    =   '';
 
     function __construct(){
-        $this->CORPID   =   'wx755896948c0fb82d';
-        $this->SECRET   =   '_coTBTWxo6RiJ04UE3pMnUvmLzeBpSJlVo9ffzK3K092X-8REVUnFFJcf8zQkn40';
+        $this->CORPID   =   'wxd6b85e3d79152555';
+        $this->SECRET   =   'x-8vB7TMz2kUhsiRZeb53U9Rn8trIR6gYNqjjc7fTu0ZJr_0a4pNScvUgnH5GOn8';
         $this->api_url  =   C('WEIXIN_API_URL');
         $this->access_token = $this->getToken();
     }
@@ -122,7 +122,7 @@ class WeChatApi extends Model{
         $this->send = $send;
 
         $dataStr    =   $this->format_params($this->send);
-
+fb($this->url);
         $this->data = http($this->url,$dataStr,'post');
 
         $result =    $this->verify_data($this->data,__FUNCTION__);
@@ -378,8 +378,8 @@ class WeChatApi extends Model{
         $send   =   array_merge($send,array(
             'access_token' =>  $this->access_token
         ));
-        if($method == post){
-            $this->url .= '?access_token=' . $this->ACCESS_TOKEN;
+        if($method == 'post'){
+            $this->url .= '?access_token=' . $this->access_token;
             return json_encode($send, JSON_UNESCAPED_UNICODE);
         }else
             return $send;

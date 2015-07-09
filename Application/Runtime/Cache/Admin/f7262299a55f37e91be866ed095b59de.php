@@ -478,49 +478,26 @@ Purchase: http://wrapbootstrap.com
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-sky" style="padding: 15px 11px">
-                <div class="input-group col-xs-2">
-                    <span class="input-group-addon">状态</span>
-                    <select style="width: 100%;">
-                        <option>请选择状态</option>
-                        <option>启用</option>
-                        <option>禁用</option>
-                    </select>
-                </div>
-                <a class="btn btn-success" id="update_app" href="javascript:void(0);" style="float: right;margin-top: -34px;">保存</a>
+                <a class="btn btn-success" id="add_map" href="javascript:void(0);">添加</a>
+                <a class="btn btn-success" id="update_map" href="javascript:void(0);">保存</a>
+                <span> | </span>
+                <a class="btn btn-danger" id="del_map" href="javascript:void(0);">删除</a>
             </div><!--Widget Header-->
-            <div class="widget-body plugins_app-">
+            <div class="widget-body plugins_map-">
                 <div class="row">
                     <div class="col-xs-6 col-md-4 tissue_tree">
                         <div class="well">
-                            <table class="table table-bordered table-condensed table-hover table-focus">
-                                <thead>
-                                <tr>
-                                    <th>
-                                        名称
-                                    </th>
-                                    <th>
-                                        状态
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr data-node="<?php echo ($vo["agentid"]); ?>">
-                                        <td>
-                                            <img src="<?php echo ($vo["round_logo_url"]); ?>" style="width: 60px;">
-                                            <?php echo ($vo["name"]); ?>
-                                        </td>
-                                        <td>
-                                            <?php echo ($vo['status']==1?'启用':'禁用'); ?>
-                                        </td>
-                                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                                </tbody>
-                            </table>
+                            <?php $show_map = function($maps,$count) use (&$show_map){ if(!empty($maps) && is_array($maps)): $count++; for($i=0,$len=count($maps);$i<$len;$i++): if($i==0): echo '<ul class="tree_menu">'; endif; echo '<li>
+                                            <a data-node="'.$maps[$i]['id'].'">
+                                                <i class="fa fa-angle-right level' . $count . '"></i>
+                                                <span>'.$maps[$i]['name'].'</span>
+                                            </a>'; if(!empty($maps[$i]['child'])): $show_map($maps[$i]['child'],$count); endif; echo '</li>'; if($i==$len-1): echo '</ul>'; endif; endfor; endif; };$show_map($maps,0);?>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">
                         <div class="well">
                             <input id="id" type="hidden"/>
-                            <form class="form-horizontal bv-form form-app">
+                            <form class="form-horizontal bv-form form-map">
                                 <div class="form-group has-feedback">
                                     <label class="col-lg-4 control-label">名称*：</label>
                                     <div class="col-lg-8">
@@ -529,40 +506,38 @@ Purchase: http://wrapbootstrap.com
                                 </div>
 
                                 <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">简称*：</label>
+                                    <label class="col-lg-4 control-label">地址*：</label>
                                     <div class="col-lg-8">
-                                        <input name="short_name" class="form-control" type="text" autocomplete="off">
+                                        <input name="site" class="form-control" type="text" autocomplete="off">
                                     </div>
                                 </div>
 
                                 <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">上级部门*：</label>
+                                    <label class="col-lg-4 control-label">图标：</label>
                                     <div class="col-lg-8">
                                         <div class="input-group">
-                                            <input name="p_name" type="text" class="form-control" autocomplete="off" disabled>
-                                            <input name="p_id" type="hidden" class="form-control" autocomplete="off">
+                                            <input class="form-control" type="text" name="icon" autocomplete="off">
                                             <span class="input-group-btn">
-                                                <button type="button" class="btn btn-success select-app">选择</button>
+                                                <button class="btn btn-default shiny" type="button">&nbsp;</button>
                                             </span>
-                                            <div class="app-root well with-header">
-                                                <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级部门</div>
-                                                <ul class="tree_menu">
-                                                    <!--<li>
-                                                        <a data-node="0"><i class="fa fa-angle-right level1"></i><span>根节点</span></a>
-                                                    </li>-->
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">部门级别*：</label>
+                                    <label class="col-lg-4 control-label">父节点*：</label>
                                     <div class="col-lg-8">
-                                        <select name="grade_id" class="form-control" autocomplete="off">
-                                            <option value="">选择部门级别</option>
-                                            <?php if(is_array($rank)): $i = 0; $__LIST__ = $rank;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                                        </select>
+                                        <div class="input-group">
+                                            <input name="p_name" type="text" class="form-control" autocomplete="off" disabled>
+                                            <input name="p_id" type="hidden" class="form-control" autocomplete="off">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-success select-map">选择</button>
+                                            </span>
+                                            <div class="map-root well with-header">
+                                                <div class="header bordered-sky" style="position: absolute;top: 0;">请选择上级节点</div>
+                                                <ul class="tree_menu"></ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -570,16 +545,6 @@ Purchase: http://wrapbootstrap.com
                                     <label class="col-lg-4 control-label">排序：</label>
                                     <div class="col-lg-8">
                                         <input name="sort" class="form-control" type="text" autocomplete="off">
-                                    </div>
-                                </div>
-
-                                <div class="form-group has-feedback">
-                                    <label class="col-lg-4 control-label">其他：</label>
-                                    <div class="col-lg-8">
-                                        <span class="input-icon icon-right">
-                                            <textarea name="remark" class="form-control"  rows="5" autocomplete="off"></textarea>
-                                            <i class="fa  fa-rocket darkorange"></i>
-                                        </span>
                                     </div>
                                 </div>
                             </form>
@@ -592,13 +557,20 @@ Purchase: http://wrapbootstrap.com
                             <button class="close" data-dismiss="alert"> × </button>
                             <i class="fa-fw fa fa-warning"></i>
                             <strong>注：</strong>
-                            没有子部门且没有成员的部门才可以被删除。
+                            最多添加三级
                         </div>
-
                     </div>
                 </div>
             </div><!--Widget Body-->
         </div><!--Widget-->
+    </div>
+</div>
+
+<div id="addModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal bv-form form-map" method="post"></form>
+        </div>
     </div>
 </div>
             </div>

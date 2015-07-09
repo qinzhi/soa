@@ -257,6 +257,10 @@ div.DTFC_LeftFootWrapper table {
     background-color: #f5f5f5;
 }
 
+.dataTable .details-key{
+    font-weight: bold;width: 80px;
+}
+
     .dataTable .details td,
     .dataTable .details th {
         padding: 4px;
