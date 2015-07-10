@@ -100,11 +100,10 @@ $(function(){
             position.id
             set_loading('show');
             $.post('/addressbook/get_position',{id:position.id},function(value){
-                if(value != ''){
-                    value = eval('(' + value + ')');
+                if(!$.isEmptyObject(value)){
                     position.showData(value);
-                    set_loading('hide');
                 }
+                set_loading('hide');
             });
         }
     });

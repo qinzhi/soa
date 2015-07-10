@@ -4,6 +4,7 @@ return array(
 
     'SHOW_ERROR_MSG'        =>  true,
 
+    'DEFAULT_AJAX_RETURN' => 'JSON',
     'DEFAULT_V_LAYER'       =>  'Tpl',
 
     'TMPL_PARSE_STRING'  =>array(

@@ -23,12 +23,16 @@ class MemberController extends AdminController {
         if(!empty($cid)){
             $where['dept_id'] = $cid;
         }
+        $keyword = trim($_GET['keyword']);
+        if(!empty($cid)){
+            $where['name'] = array('like',"%$keyword%");
+        }
         $page = !empty($_POST['page']) ? (int)$_POST['page'] : 1;
         $limit = !empty($_GET['limit']) ? $_GET['limit'] : 10;
         $offset = ($page - 1) * $limit;
-        $total = $this->member->get_total();
+        $total = $this->member->get_total($where);
         $page_num = ceil( $total / $limit );
-        $members = $this->member->get_members($offset,$limit);
+        $members = $this->member->get_members($offset,$limit,$where);
         $this->assign('total',$total);
         $this->assign('page',$page);
         $this->assign('page_num',$page_num);

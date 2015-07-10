@@ -36,12 +36,11 @@ $(function(){
             if(dept.node != node){
                 set_loading('show');
                 $.post('/addressbook/get_dept',{id:node},function(value){
-                    if(value != ''){
-                        value = eval('(' + value + ')');
+                    if(!$.isEmptyObject(value)){
                         dept.node = value.id;
                         dept.showData(value);
-                        set_loading('hide');
                     }
+                    set_loading('hide');
                 });
             }
 

@@ -39,7 +39,7 @@ class AddressbookController extends AdminController {
     public function get_dept(){
         $id = (int)$_POST['id'];
         $dept   =   $this->dept->find($id);
-        echo is_array($dept) ? json_encode($dept) : '';
+        if(!empty($dept))$this->ajaxReturn($dept);
     }
 
     private function add_dept($params){
@@ -100,12 +100,16 @@ class AddressbookController extends AdminController {
 
     public function del_dept(){
         $id = (int)$_POST['id'];
-        $result = $this->_wechat->delete_department($id);
-        if($result->errcode == 0){
-            $this->dept->delete($id);
-            echo DB_EXEC_DELETE_SUCCESS;
+        if($id != 1){
+            $result = $this->_wechat->delete_department($id);
+            if($result->errcode == 0){
+                $this->dept->delete($id);
+                echo DB_EXEC_DELETE_SUCCESS;
+            }else{
+                echo DB_EXEC_DELETE_FAIL;
+            }
         }else{
-            echo DB_EXEC_DELETE_FAIL;
+
         }
     }
 
@@ -133,7 +137,7 @@ class AddressbookController extends AdminController {
     public function get_position(){
         $id = (int)$_POST['id'];
         $position   =   $this->position->find($id);
-        echo is_array($position) ? json_encode($position) : '';
+        if(!empty($position))$this->ajaxReturn($position);
     }
 
     public function update_position(){
@@ -182,8 +186,8 @@ class AddressbookController extends AdminController {
 
     public function get_rank(){
         $id = (int)$_POST['id'];
-        $position   =   $this->rank->find($id);
-        echo is_array($position) ? json_encode($position) : '';
+        $rank   =   $this->rank->find($id);
+        if(!empty($rank))$this->ajaxReturn($rank);
     }
 
     public function update_rank(){
@@ -231,7 +235,7 @@ class AddressbookController extends AdminController {
     public function get_member(){
         $id = (int)$_POST['id'];
         $member   =   $this->member->find($id);
-        echo is_array($member) ? json_encode($member) : '';
+        if(!empty($member))$this->ajaxReturn($member);
     }
 
     public function add_member($params){

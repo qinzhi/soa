@@ -157,8 +157,7 @@ $(function(){
             member.id = $(this).parent().data('node');
             set_loading('show');
             $.post('/addressbook/get_member',{id:member.id},function(value){
-                if(value != ''){
-                    value = eval('(' + value + ')');
+                if(!$.isEmptyObject(value)){
                     member.showData(value);
                 }
                 set_loading('hide');

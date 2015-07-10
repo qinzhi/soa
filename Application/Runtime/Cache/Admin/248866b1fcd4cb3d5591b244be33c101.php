@@ -578,10 +578,6 @@ Purchase: http://wrapbootstrap.com
 <!--Basic Scripts-->
 <script src="/Public/Admin/resource/js/bootstrap.min.js"></script>
 <script src="/Public/Admin/resource/js/datetime/bootstrap-datepicker.js"></script>
-<script src="/Public/Admin/resource/js/datatable/jquery.dataTables.min.js"></script>
-<script src="/Public/Admin/resource/js/datatable/dataTables.tableTools.min.js"></script>
-<script src="/Public/Admin/resource/js/datatable/dataTables.bootstrap.min.js"></script>
-<script src="/Public/Admin/resource/js/datatable/datatables-init.js"></script>
 <script src="/Public/Admin/resource/js/bootbox/bootbox.js"></script>
 <script src="/Public/Admin/resource/js/toastr/toastr.js"></script>
 <script src="/Public/Admin/CKeditor/ckeditor.js"></script>

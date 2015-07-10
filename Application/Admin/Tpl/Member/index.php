@@ -75,7 +75,9 @@
                                         </div>
                                     </div>
                                     <div id="expandabledatatable_filter" class="dataTables_filter">
-                                        <label><input type="search" class="form-control input-sm" aria-controls="expandabledatatable"></label>
+                                        <form>
+                                            <label><input type="search" id="keyword" name="keyword" class="form-control input-sm"></label>
+                                        </form>
                                     </div>
                                     <div class="dataTables_length" id="expandabledatatable_length">
                                         <label>

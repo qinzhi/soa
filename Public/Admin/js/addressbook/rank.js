@@ -101,11 +101,10 @@ $(function(){
             rank.id = $(this).data('node');
             set_loading('show');
             $.post('/addressbook/get_rank',{id:rank.id},function(value){
-                if(value != ''){
-                    value = eval('(' + value + ')');
+                if(!$.isEmptyObject(value)){
                     rank.showData(value);
-                    set_loading('hide');
                 }
+                set_loading('hide');
             });
         }
     });
