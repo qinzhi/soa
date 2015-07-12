@@ -563,7 +563,7 @@ Purchase: http://wrapbootstrap.com
                                                     </td>
                                                     <td>
                                                         <?php
- $get_dept = function($depts,$dept_id,$flag) use (&$get_dept){ if($flag){ foreach($depts as $dept){ if($dept_id == $dept['id']){ echo $dept['name']; return; }elseif(!empty($dept['child'])){ $get_dept($dept['child'],$dept_id,true); } } } };$get_dept($depts,$vo['dept_id'],true); ?>
+ $get_dept = function($depts,$dept_id,$flag) use (&$get_dept){ if($flag){ foreach($depts as $dept){ if($dept_id == $dept['id']){ echo $dept['name']; return; }elseif(!empty($dept['child'])){ $get_dept($dept['child'],$dept_id,true); } } } }; $dept_id = explode(',',trim($vo['dept_id'],',')); $get_dept($depts,$dept_id[count($dept_id)-1],true); ?>
                                                     </td>
                                                     <td>
                                                         <?php echo ($vo["position_str"]); ?>

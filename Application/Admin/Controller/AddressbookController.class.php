@@ -235,14 +235,18 @@ class AddressbookController extends AdminController {
     public function get_member(){
         $id = (int)$_POST['id'];
         $member   =   $this->member->find($id);
-        if(!empty($member))$this->ajaxReturn($member);
+        if(!empty($member)){
+            $member['dept_id'] = trim($member['dept_id'],',');
+            $this->ajaxReturn($member);
+        }
     }
 
     public function add_member($params){
+        $dept_id = explode('_',$params['dept_id']);
         $data = array(
             'userid' => $params['account'],
             'name' => $params['name'],
-            'department' => $params['dept_id'],//$params['dept_id'],
+            'department' => $dept_id[count($dept_id) - 1],//$params['dept_id'],
             'mobile' => $params['mobile_tel'],
             'position' => $params['position'],
             'gender' => $params['sex'],
@@ -254,7 +258,7 @@ class AddressbookController extends AdminController {
             $this->member->create();
             $this->member->name = $params['name'];
             $this->member->account = $params['account'];
-            $this->member->dept_id  =$params['dept_id'];
+            $this->member->dept_id  = ',' . $params['dept_path_id'] . ',';
             $this->member->position_id = $params['position_id'];
             $this->member->position_str = $params['position'];
             $this->member->letter = get_letter($this->member->name);
@@ -299,7 +303,7 @@ class AddressbookController extends AdminController {
                 $this->member->find($id);
                 $this->member->name = $name;
                 $this->member->account = $account;
-                $this->member->dept_id  = $dept_id;
+                $this->member->dept_id  = ',' . $dept_path_id . ',';
                 $this->member->position_id = $position_id;
                 $this->member->position_str= $position;
                 $this->member->letter = get_letter($this->member->name);

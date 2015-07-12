@@ -122,7 +122,9 @@
                                                                         }
                                                                     }
                                                                 }
-                                                            };$get_dept($depts,$vo['dept_id'],true);
+                                                            };
+                                                            $dept_id = explode(',',trim($vo['dept_id'],','));
+                                                            $get_dept($depts,$dept_id[count($dept_id)-1],true);
                                                         ?>
                                                     </td>
                                                     <td>

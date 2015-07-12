@@ -20,8 +20,8 @@ class MemberController extends AdminController {
     public function index(){
         $cid = (int)$_GET['cid'];
         $where = array();
-        if(!empty($cid)){
-            $where['dept_id'] = $cid;
+        if(!empty($cid) && $cid != 1){
+            $where['dept_id'] = array('like',"%,$cid,%");
         }
         $keyword = trim($_GET['keyword']);
         if(!empty($cid)){

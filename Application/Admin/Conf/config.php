@@ -2,10 +2,8 @@
 
 return array(
 
-    'SHOW_ERROR_MSG'        =>  true,
 
-    'DEFAULT_AJAX_RETURN' => 'JSON',
-    'DEFAULT_V_LAYER'       =>  'Tpl',
+    'DEFAULT_CONTROLLER' => 'Public',     //默认模块
 
     'TMPL_PARSE_STRING'  =>array(
         '__PUBLIC__' => '/Public/Admin', // 更改默认的/Public 替换规则

@@ -10,7 +10,9 @@ $(function(){
             form.find('input[name=account]').val(value.account);
             form.find('input[name=name]').val(value.name);
 
-            form.find('input[name=dept_id]').val(value.dept_id);
+            var dept_id = value.dept_id.split(',');
+            form.find('input[name=dept_id]').val(dept_id[dept_id.length-1]);
+            form.find('input[name=dept_path_id]').val(value.dept_id);
             var dept_name = $(form).find('a[data-node=' + value.dept_id + ']').find('span').text();
             form.find('input[name=dept_name]').val(dept_name);
 
@@ -41,13 +43,15 @@ $(function(){
         }
     };
     $(this).on('click','.tree_menu a',function(){
-        var node = $(this).data('node');
+        var node = $(this).data('node-path');
+        var path = $(this).data('node');
         var name = $(this).find('span').text();
         var dept_root   =   $(this).parents('.dept-root');
         if(dept_root.length){
             dept_root.hide();
             dept_root.parent().find('input[name=dept_name]').val(name);
             dept_root.parent().find('input[name=dept_id]').val(node);
+            dept_root.parent().find('input[name=dept_path_id]').val(path);
         }
         return false;
     });

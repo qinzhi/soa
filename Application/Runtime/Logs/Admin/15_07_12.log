@@ -1,0 +1,141 @@
+[ 2015-07-12T10:20:01+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T10:20:55+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T10:20:57+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T10:20:57+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T10:20:57+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T10:21:28+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T10:26:48+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T10:26:49+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-07-12T10:26:50+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T10:26:50+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T10:26:50+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T10:26:52+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T10:26:52+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T10:26:54+08:00 ] 127.0.0.1 /map/get_map
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.001000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `soa_map` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `soa_map` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-07-12T11:04:11+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T11:05:08+08:00 ] 127.0.0.1 /Public/Admin/resource/css/demo.min.css
+ERR: 非法操作:Admin
+
+[ 2015-07-12T21:56:12+08:00 ] 127.0.0.1 /addressbook/get_member
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ action_begin ] --START--
+INFO: Run Admin\Behavior\AuthCheckBehavior [ RunTime:0.000000s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `soa_dept` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `soa_position` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `soa_rank` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `soa_member` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `soa_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+

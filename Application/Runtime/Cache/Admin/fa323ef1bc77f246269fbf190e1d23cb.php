@@ -4,7 +4,7 @@
 <!-- Head -->
 <head>
     <meta charset="utf-8" />
-    <title>Blank Page</title>
+    <title>轻微OA</title>
 
     <meta name="description" content="login" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,6 @@
     <link rel="shortcut icon" href="/Public/Admin/resource/img/favicon.png" type="image/x-icon">
     <!--Basic Styles-->
     <link href="/Public/Admin/resource/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/Public/Admin/resource/css/weather-icons.min.css" rel="stylesheet" />
     <link href="/Public/Admin/resource/css/font-awesome.min.css" rel="stylesheet" />
 
     <!--Beyond styles-->

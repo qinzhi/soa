@@ -11,6 +11,7 @@
                                 <?php $show_dept = function($depts,$count) use (&$show_dept){
                                     if(!empty($depts) && is_array($depts)):
                                         $black = '';
+                                        $count++;
                                         if($count > 1){
                                             for($j=1;$j<$count;$j++){
                                                 $black .= '&nbsp;&nbsp;&nbsp;&nbsp;';
@@ -19,13 +20,12 @@
                                         for($i=0,$len=count($depts);$i<$len;$i++):
                                             echo '<option value="' . $depts[$i]['id'] . '">' . $black . $depts[$i]['name'] . '</option>';
                                             if(!empty($depts[$i]['child'])):
-                                                $step = $count + 1;
-                                                $show_dept($depts[$i]['child'],$step);
+                                                $show_dept($depts[$i]['child'],$count);
                                             endif;
                                         endfor;
                                     endif;
                                 };?>
-                                <?php $show_dept($depts,1);?>
+                                <?php $show_dept($depts,0);?>
                             </select>
                         </div>
                         <div class="form-group" style="margin-top: -4px;">
@@ -109,26 +109,28 @@
                                             <td colspan="2">
                                                 <div class="input-group">
                                                     <input name="dept_name" type="text" class="form-control" disabled>
+                                                    <input name="dept_path_id" type="hidden" class="form-control">
                                                     <input name="dept_id" type="hidden" class="form-control">
                                                     <span class="input-group-btn">
                                                         <button type="button" class="btn btn-success select-dept">选择</button>
                                                     </span>
                                                     <div class="dept-root well with-header">
                                                         <div class="header bordered-sky" style="position: absolute;top: 0;">请选择部门</div>
-                                                        <?php $show_dept = function($depts,$count) use (&$show_dept){
+                                                        <?php $show_dept = function($depts,$pid,$count) use (&$show_dept){
                                                             if(!empty($depts) && is_array($depts)):
+                                                                ++$count;
                                                                 for($i=0,$len=count($depts);$i<$len;$i++):
                                                                     if($i==0):
                                                                         echo '<ul class="tree_menu">';
                                                                     endif;
+                                                                    $path = (empty($pid) || ($pid == 1))? $depts[$i]['id'] : ($pid . ',' . $depts[$i]['id']);
                                                                     echo '<li>
-                                                                        <a data-node="'.$depts[$i]['id'].'">
+                                                                        <a data-node="'.$depts[$i]['id'].'" data-node-path="' . $path . '">
                                                                             <i class="fa fa-angle-right level' . $count . '"></i>
                                                                             <span>'.$depts[$i]['name'].'</span>
                                                                         </a>';
                                                                     if(!empty($depts[$i]['child'])):
-                                                                        $step = $count + 1;
-                                                                        $show_dept($depts[$i]['child'],$step);
+                                                                        $show_dept($depts[$i]['child'],$path,$count);
                                                                     endif;
                                                                     echo '</li>';
                                                                     if($i==$len-1):
@@ -136,7 +138,7 @@
                                                                     endif;
                                                                 endfor;
                                                             endif;
-                                                        };$show_dept($depts,1);?>
+                                                        };$show_dept($depts,'',0);?>
                                                     </div>
                                                 </div>
                                             </td>
