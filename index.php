@@ -21,7 +21,7 @@ define('APP_DEBUG',True);
 define('APP_NAME','轻微OA');
 
 //项目路径
-define('PROJECT_PATH',$_SERVER['DOCUMENT_ROOT']);
+define('PROJECT_PATH',dirname(__FILE__));
 
 // 定义应用目录
 define('APP_PATH','./Application/');

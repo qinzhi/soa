@@ -26,7 +26,7 @@ class AddressbookController extends AdminController {
     }
 
     public function organ(){
-        if(!empty($_POST)){
+        if(IS_POST){
             if($_POST['type'] == 'add'){
                 $this->add_dept($_POST);
             }
@@ -114,7 +114,7 @@ class AddressbookController extends AdminController {
     }
 
     public function position(){
-        if(!empty($_POST)){
+        if(IS_POST){
             if($_POST['type'] == 'add'){
                 $this->add_position($_POST);
             }
@@ -164,7 +164,7 @@ class AddressbookController extends AdminController {
     }
 
     public function rank(){
-        if(!empty($_POST)){
+        if(IS_POST){
             if($_POST['type'] == 'add'){
                 $this->add_rank($_POST);
             }
@@ -214,7 +214,7 @@ class AddressbookController extends AdminController {
     }
 
     public function member(){
-        if(!empty($_POST)){
+        if(IS_POST){
             if($_POST['type'] == 'add'){
                 $this->add_member($_POST);
             }

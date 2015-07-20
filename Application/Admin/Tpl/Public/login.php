@@ -15,7 +15,7 @@
     <link href="__CSS__/font-awesome.min.css" rel="stylesheet" />
 
     <!--Beyond styles-->
-    <link href="__CSS__/demo.min.css" rel="stylesheet" />
+    <link href="__CSS__/soa.min.css" rel="stylesheet" />
     <link href="__CSS__/login.css" rel="stylesheet" />
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="__JS__/skins.min.js"></script>
@@ -40,7 +40,7 @@
                 <i class="login-field-icon menu-icon glyphicon glyphicon-lock"></i>
             </div>
             <div class="form-group">
-                <button class="btn btn-large btn-block btn-primary btn-login" type="button">登陆</button>
+                <button class="btn btn-large btn-block btn-primary btn-login" type="button" onclick="javascript:window.location.href='/map'">登陆</button>
                 <a class="forget-psd" href="#">忘记密码</a>
             </div>
         </div>

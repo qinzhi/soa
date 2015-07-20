@@ -4,20 +4,23 @@ $(function(){
     var dept = {
         showData : function(value){
             dept.id = value.id;
-            $('.plugins_dept- form').find('input[name=name]').val(value.name);
-            $('.plugins_dept- form').find('input[name=short_name]').val(value.short_name);
-            $('.plugins_dept- form').find('input[name=p_id]').val(value.pid);
+            var form = $('.plugins_dept- form');
+            form.find('input[name=name]').val(value.name);
+            form.find('input[name=short_name]').val(value.short_name);
+            form.find('input[name=p_id]').val(value.pid);
             if(value.pid){
                 var p_name = $('.tissue_tree a[data-node=' + value.pid + ']').find('span').text();
             }else{
                 var p_name = '';
             }
-            $('.plugins_dept- form').find('input[name=p_name]').val(p_name);
-            $('.plugins_dept- form').find('select[name=grade_id]')
-                .find('option[value=' + value.dept_grade_id + ']').attr('selected',true);
+            form.find('input[name=p_name]').val(p_name);
 
-            $('.plugins_dept- form').find('input[name=sort]').val(value.sort);
-            $('.plugins_dept- form').find('input[name=remark]').val(value.remark);
+            var index = form.find('select[name=grade_id]')
+                .find('option[value=' + value.dept_grade_id + ']').index();
+            form.find('select[name=grade_id]').get(0).selectedIndex = index;
+
+            form.find('input[name=sort]').val(value.sort);
+            form.find('input[name=remark]').val(value.remark);
         }
     };
     $(this).on('click','.tree_menu a',function(){
@@ -60,7 +63,6 @@ $(function(){
     $("#add_dept").on('click', function () {
         bootbox.dialog({
             message: function(){
-
                 if($('#addModal .col-md-12 .form-dept').html() == ''){
                     $('#addModal .col-md-12 .form-dept').append($('form.form-dept').html());
                     $('#addModal .form-dept').append('<input name="type" value="add" type="hidden"/>');

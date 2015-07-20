@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# 这一句必须存在，而且必须放在头部
+# 指明缓存入口
+
+CACHE:
+/member
+/Public/Home/resource/js/jquery.min.js
+/Public/Home/resource/js/jquery.mobile-1.4.5.min.js
+
+# 以下资源必须在线访问
+NETWORK:
+#login.php
+
+# 如果index.php无法访问则用404.html代替
+FALLBACK:
+/index.php /404.html

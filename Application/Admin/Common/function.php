@@ -168,7 +168,11 @@ function http($url, $params, $method = 'GET', $header = array(), $multi = false)
     /* 根据请求类型设置特定参数 */
     switch(strtoupper($method)) {
         case 'GET' :
-            $opts[CURLOPT_URL] = $url . '?' . str_replace("&amp;", "&", http_build_query($params));
+            if(is_string($params)){
+                $opts[CURLOPT_URL] = $url . '?' . $params;
+            }elseif(is_array($params)){
+                $opts[CURLOPT_URL] = $url . '?' . str_replace("&amp;", "&", http_build_query($params));
+            }
             break;
         case 'POST' :
             //判断是否传输文件

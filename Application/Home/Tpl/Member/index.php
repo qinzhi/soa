@@ -26,3 +26,11 @@
 
     </div><!-- /panel -->
 </div>
+<script>
+    if(window.applicationCache) {
+        window.applicationCache.addEventListener('cached', function(){
+            alert('cached');
+        }, true);
+
+    }
+</script>

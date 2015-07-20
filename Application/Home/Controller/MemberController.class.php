@@ -11,7 +11,7 @@ class MemberController extends Controller {
     public function index(){
         $members = $this->member->get_members('id,name,letter,position_str,office_tel,mobile_tel');
         $members = $this->member->format_members($members);
-fb($members);
+//fb($members);
         $this->assign('members',$members);
         $this->display();
     }
