@@ -18,7 +18,7 @@ class MemberController extends AdminController {
     }
 
     public function index(){
-        $cid = (int)$_GET['cid'];
+        $cid = I('get.id',1);
         $where = array();
         if(!empty($cid) && $cid != 1){
             $where['dept_id'] = array('like',"%,$cid,%");
@@ -27,12 +27,14 @@ class MemberController extends AdminController {
         if(!empty($cid)){
             $where['name'] = array('like',"%$keyword%");
         }
-        $page = !empty($_POST['page']) ? (int)$_POST['page'] : 1;
-        $limit = !empty($_GET['limit']) ? $_GET['limit'] : 10;
+        //$page = !empty($_POST['page']) ? (int)$_POST['page'] : 1;
+        $page = I('post.page',1);
+        //$limit = !empty($_GET['limit']) ? $_GET['limit'] : 10;
+        $limit = I('get.limit',10);
         $offset = ($page - 1) * $limit;
         $total = $this->member->get_total($where);
         $page_num = ceil( $total / $limit );
-        $members = $this->member->get_members($offset,$limit,$where);
+        $members = $this->member->get_members($offset,$limit,$where);fb($this->member->getLastSql());
         $this->assign('total',$total);
         $this->assign('page',$page);
         $this->assign('page_num',$page_num);
@@ -40,5 +42,4 @@ class MemberController extends AdminController {
         $this->assign('depts',$this->dept->get_depts());
         $this->display();
     }
-
 }

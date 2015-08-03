@@ -138,7 +138,7 @@ class Dispatcher {
 
         // 获取模块名称
         define('MODULE_NAME', defined('BIND_MODULE')? BIND_MODULE : self::getModule($varModule));
-        
+
         // 检测模块是否存在
         if( MODULE_NAME && (defined('BIND_MODULE') || !in_array_case(MODULE_NAME,C('MODULE_DENY_LIST')) ) && is_dir(APP_PATH.MODULE_NAME)){
             // 定义当前模块路径
@@ -318,6 +318,7 @@ class Dispatcher {
      * 获得实际的模块名称
      */
     static private function getModule($var) {
+        //$module   = (!empty($_GET[$var]) && is_dir(APP_PATH.$_GET[$var])?$_GET[$var]:C('DEFAULT_MODULE'));//经本人修改
         $module   = (!empty($_GET[$var])?$_GET[$var]:C('DEFAULT_MODULE'));
         unset($_GET[$var]);
         if($maps = C('URL_MODULE_MAP')) {

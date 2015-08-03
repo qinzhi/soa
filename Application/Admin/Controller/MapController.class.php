@@ -18,7 +18,7 @@ class MapController extends AdminController {
 
     public function index(){
         if(!empty($_POST)){
-            if($_POST['type'] == 'add'){
+            if(I('post.type') == 'add'){
                 $this->add_map($_POST);
             }
         }

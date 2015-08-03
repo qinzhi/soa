@@ -37,7 +37,7 @@ class AddressbookController extends AdminController {
     }
 
     public function get_dept(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         $dept   =   $this->dept->find($id);
         if(!empty($dept))$this->ajaxReturn($dept);
     }
@@ -99,7 +99,7 @@ class AddressbookController extends AdminController {
     }
 
     public function del_dept(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         if($id != 1){
             $result = $this->_wechat->delete_department($id);
             if($result->errcode == 0){
@@ -135,7 +135,7 @@ class AddressbookController extends AdminController {
     }
 
     public function get_position(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         $position   =   $this->position->find($id);
         if(!empty($position))$this->ajaxReturn($position);
     }
@@ -158,7 +158,7 @@ class AddressbookController extends AdminController {
     }
 
     public function del_position(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         $result = $this->position->delete($id);
         echo $result ? DB_EXEC_DELETE_SUCCESS : DB_EXEC_DELETE_FAIL;
     }
@@ -185,7 +185,7 @@ class AddressbookController extends AdminController {
     }
 
     public function get_rank(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         $rank   =   $this->rank->find($id);
         if(!empty($rank))$this->ajaxReturn($rank);
     }
@@ -208,7 +208,7 @@ class AddressbookController extends AdminController {
     }
 
     public function del_rank(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         $result = $this->rank->delete($id);
         echo $result ? DB_EXEC_DELETE_SUCCESS : DB_EXEC_DELETE_FAIL;
     }
@@ -219,7 +219,7 @@ class AddressbookController extends AdminController {
                 $this->add_member($_POST);
             }
         }
-        $page = !empty($_POST['page']) ? (int)$_POST['page'] : 1;
+        $page = I('post.page/d',1);
         $limit = 10;
         $offset = ($page - 1) * $limit;
         $total = $this->member->get_total();
@@ -233,7 +233,7 @@ class AddressbookController extends AdminController {
     }
 
     public function get_member(){
-        $id = (int)$_POST['id'];
+        $id = I('post.id/d');
         $member   =   $this->member->find($id);
         if(!empty($member)){
             $member['dept_id'] = trim($member['dept_id'],',');

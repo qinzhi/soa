@@ -3,7 +3,7 @@
 return array(
 
 
-    'DEFAULT_CONTROLLER' => 'Public',     //默认模块
+    'DEFAULT_CONTROLLER' => 'Public',     //默认控制器
 
     'TMPL_PARSE_STRING'  =>array(
         '__PUBLIC__' => '/Public/Admin', // 更改默认的/Public 替换规则

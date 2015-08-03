@@ -3,9 +3,9 @@ CACHE MANIFEST
 # 指明缓存入口
 
 CACHE:
-/member
-/Public/Home/resource/js/jquery.min.js
-/Public/Home/resource/js/jquery.mobile-1.4.5.min.js
+#/member
+#/Public/Home/resource/js/jquery.min.js
+#/Public/Home/resource/js/jquery.mobile-1.4.5.min.js
 
 # 以下资源必须在线访问
 NETWORK:
